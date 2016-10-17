@@ -1,23 +1,17 @@
-set ssl_starttls=yes
+set imap_user="marcos.souza.org@gmail.com"
+set spoolfile="imaps://imap.gmail.com/INBOX"
+set folder="imaps://imap.gmail.com/"
+set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+
+set smtp_url="smtp://marcos.souza.org@smtp.gmail.com:587/"
 set ssl_force_tls=yes
 
-set imap_user="marcos.souza.org@gmail.com"
 set from="marcos.souza.org@gmail.com"
 set realname="Marcos Paulo de Souza"
 
-set folder=imaps://imap.gmail.com/
-set spoolfile=imaps://imap.gmail.com/INBOX
-set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
-
-set smtp_url="smtp://marcos.souza.org@smtp.gmail.com:587/"
-
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
-
-set move=no
-set mail_check=30
-set timeout=30
-set editor="vim"
+set sort="threads"
+set strict_threads="yes"
 
 bind index G imap-fetch-mail

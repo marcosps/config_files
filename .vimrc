@@ -1,3 +1,6 @@
-set nu
 set ic
-set spell spelllang=en,pt
+set nu
+set smartindent
+set spell spelllang=pt,en
+
+filetype plugin on
