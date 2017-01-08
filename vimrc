@@ -2,6 +2,7 @@ set ic
 set nu
 set smartindent
 set spell spelllang=pt,en
+set nobackup
 
 filetype plugin on
 
