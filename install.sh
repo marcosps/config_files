@@ -1,3 +1,21 @@
+#!/bin/bash
+
+if [ "x$1" = "xsetup" ]; then
+	# packages to be installed on a fresh Fedora install
+	sudo dnf install \
+		acpitool acpica-tools \
+		vim \
+		mutt \
+		git
+
+	# install pt spellcheck for vim
+	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
+		wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
+		sudo unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
+		rm /tmp/pt.zip
+	fi
+fi
+
 sudo cp bash_config /etc/profile.d
 cp kernel_config ~/
 
