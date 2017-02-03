@@ -4,7 +4,7 @@ set smartindent
 set spell spelllang=pt,en
 set nobackup
 set wildmenu
-colorscheme elflord
+colorscheme peachpuff
 
 filetype plugin on
 
