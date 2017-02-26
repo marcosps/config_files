@@ -11,3 +11,8 @@
 	cccmd = ./scripts/get_maintainer.pl -i
 [push]
 	default = simple
+[merge]
+	tool = vimdiff
+	mergestyle = diff3
+[mergetools]
+	prompt = false
