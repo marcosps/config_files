@@ -14,4 +14,6 @@ set realname="Marcos Paulo de Souza"
 set sort="threads"
 set strict_threads="yes"
 
+set signature="~/.signature"
+
 bind index G imap-fetch-mail
