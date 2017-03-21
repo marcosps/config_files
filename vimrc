@@ -5,10 +5,10 @@ set spell spelllang=pt,en
 set nobackup
 set noswapfile
 set wildmenu
+set path+=**
 colorscheme peachpuff
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+let &colorcolumn=join(range(81,82),",")
 
 filetype plugin on
 
