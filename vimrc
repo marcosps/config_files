@@ -6,6 +6,9 @@ set nobackup
 set wildmenu
 colorscheme peachpuff
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 filetype plugin on
 
 map <up> <nop>
