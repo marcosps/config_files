@@ -6,7 +6,7 @@ set nobackup
 set noswapfile
 set wildmenu
 set path+=**
-colorscheme peachpuff
+colorscheme darkblue
 
 let &colorcolumn=join(range(81,82),",")
 
