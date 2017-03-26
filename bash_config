@@ -1,10 +1,5 @@
-function apply_patches() {
-	find ~/data/gitroot/linux/patches -name *.patch -print | sort | xargs cat | patch -p1 -N
-}
-
 NUMCPU=8
 function kcomp() {
-	apply_patches
 	make -j$NUMCPU
 	make modules -j$NUMCPU
 	make headers_install
