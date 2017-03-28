@@ -6,7 +6,9 @@ if [ "x$1" = "xsetup" ]; then
 		acpitool acpica-tools \
 		vim \
 		mutt \
-		git
+		git \
+		mtdev-devel \
+		libwacom-devel
 
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
