@@ -8,7 +8,8 @@ if [ "x$1" = "xsetup" ]; then
 		mutt \
 		git \
 		mtdev-devel \
-		libwacom-devel
+		libwacom-devel \
+		sparse
 
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
