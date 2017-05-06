@@ -9,7 +9,9 @@ if [ "x$1" = "xsetup" ]; then
 		git \
 		mtdev-devel \
 		libwacom-devel \
-		sparse
+		sparse \
+		libunwind-devel \
+		libinput-devel \
 
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
