@@ -7,6 +7,7 @@ if [ "x$1" = "xsetup" ]; then
 		vim \
 		mutt \
 		git \
+		tmux \
 		mtdev-devel \
 		libwacom-devel \
 		sparse \
@@ -28,7 +29,7 @@ do
 	cp $i ~/.$i
 done
 
-if [ ! -f ~/.vim/bundle ]; then
+if [ ! -d ~/.vim/bundle ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 	vim +PluginInstall +qall
 fi
