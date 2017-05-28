@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "x$1" = "xsetup" ]; then
+function install() {
 	# packages to be installed on a fresh Fedora install
 	sudo dnf install \
 		ctags \
@@ -22,19 +22,21 @@ if [ "x$1" = "xsetup" ]; then
 		sudo unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
 		rm /tmp/pt.zip
 	fi
-fi
 
-sudo cp bash_config /etc/profile.d
+	sudo cp bash_config /etc/profile.d
 
-for i in vimrc gitconfig muttrc tmux.conf
-do
-	cp $i ~/.$i
-done
+	for i in vimrc gitconfig muttrc tmux.conf
+	do
+		cp $i ~/.$i
+	done
 
-if [ ! -d ~/.vim/bundle ]; then
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
-	vim +PluginInstall +qall
-fi
+	#create signature file
+	echo $'Thanks,\n\tMarcos' >~/.signature
 
-#create signature file
-echo $'Thanks,\n\tMarcos' >~/.signature
+	if [ ! -f ~/.vim/autoload/plug.vim ]; then
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	fi
+}
+
+install

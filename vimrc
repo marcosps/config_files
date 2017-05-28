@@ -6,22 +6,13 @@ set nobackup
 set noswapfile
 set wildmenu
 set path+=**
-set nocompatible
-filetype off
 syntax on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call plug#begin('~/.vim/plugged')
+Plug 'tyrannicaltoucan/vim-quantum'
+call plug#end()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'NLKNguyen/papercolor-theme'
-
-call vundle#end()
-
-filetype plugin indent on
-
-set background=dark
-colorscheme PaperColor
+colorscheme quantum
 
 let &colorcolumn=join(range(81,82),",")
 
