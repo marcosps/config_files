@@ -12,6 +12,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
+" set black background
+let g:quantum_black=1
+set background=dark
+
+" set comments in italic
+let g:quantum_italics=1
+
+set termguicolors
 colorscheme quantum
 
 let &colorcolumn=join(range(81,82),",")
