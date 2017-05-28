@@ -5,6 +5,7 @@ function install() {
 	sudo dnf install \
 		ctags \
 		gcc \
+		meson \
 		acpitool acpica-tools \
 		vim \
 		mutt \
@@ -15,6 +16,7 @@ function install() {
 		sparse \
 		libunwind-devel \
 		libinput-devel \
+		libevdev-devel
 
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
