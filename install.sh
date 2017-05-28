@@ -3,6 +3,8 @@
 if [ "x$1" = "xsetup" ]; then
 	# packages to be installed on a fresh Fedora install
 	sudo dnf install \
+		ctags \
+		gcc \
 		acpitool acpica-tools \
 		vim \
 		mutt \
