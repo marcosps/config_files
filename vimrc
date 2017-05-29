@@ -6,6 +6,7 @@ set nobackup
 set noswapfile
 set wildmenu
 set path+=**
+set cursorline
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -19,7 +20,9 @@ set background=dark
 " set comments in italic
 let g:quantum_italics=1
 
-set termguicolors
+if has('termguicolors')
+	set termguicolors
+endif
 colorscheme quantum
 
 let &colorcolumn=join(range(81,82),",")
