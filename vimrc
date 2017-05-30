@@ -7,7 +7,6 @@ set noswapfile
 set wildmenu
 set path+=**
 set cursorline
-hi CursorLine cterm=underline
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -25,6 +24,9 @@ if has('termguicolors')
 	set termguicolors
 endif
 colorscheme quantum
+
+" CursorLine is set by quantum, so reset it after colorscheme
+hi CursorLine cterm=underline
 
 let &colorcolumn=join(range(81,82),",")
 
