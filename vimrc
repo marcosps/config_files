@@ -1,12 +1,13 @@
 set ic
 set nu
 set smartindent
-set spell spelllang=pt,en
+set spell spelllang=en
 set nobackup
 set noswapfile
 set wildmenu
 set path+=**
 set cursorline
+hi CursorLine cterm=underline
 syntax on
 
 call plug#begin('~/.vim/plugged')
