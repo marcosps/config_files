@@ -2,27 +2,29 @@
 
 function install() {
 	# packages to be installed on a fresh Fedora install
-	sudo dnf install \
-		ctags \
-		gcc \
-		meson \
-		acpitool acpica-tools \
-		vim \
-		mutt \
-		git \
-		tmux \
-		mtdev-devel \
-		libwacom-devel \
-		sparse \
-		libunwind-devel \
-		libinput-devel \
-		libevdev-devel
+	if [ "x$(uname)" != "xDarwin" ]; then
+		sudo dnf install \
+			ctags \
+			gcc \
+			meson \
+			acpitool acpica-tools \
+			vim \
+			mutt \
+			git \
+			tmux \
+			mtdev-devel \
+			libwacom-devel \
+			sparse \
+			libunwind-devel \
+			libinput-devel \
+			libevdev-devel
 
-	# install pt spellcheck for vim
-	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
-		wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
-		sudo unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
-		rm /tmp/pt.zip
+		# install pt spellcheck for vim
+		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
+			wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
+			sudo unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
+			rm /tmp/pt.zip
+		fi
 	fi
 
 	sudo cp bash_config /etc/profile.d
