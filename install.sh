@@ -2,7 +2,7 @@
 
 function install() {
 	# packages to be installed on a fresh Fedora install
-	if [ "x$(uname)" != "xDarwin" ]; then
+	if [ "x$(uname)" != "xDarwin" ] && ! [[ "$(uname -v)" =~ "Ubuntu" ]]; then
 		sudo dnf install \
 			ctags \
 			gcc \
