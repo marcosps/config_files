@@ -8,7 +8,13 @@ set wildmenu
 set path+=**
 set cursorline
 set term=screen-256color
+set tabstop=8 shiftwidth=8 softtabstop=0
+set noexpandtab
+set hlsearch
 syntax enable
+
+" Fix mac os delete button..
+set backspace=eol,start
 
 call plug#begin('~/.vim/plugged')
 Plug 'scwood/vim-hybrid'
