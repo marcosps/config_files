@@ -15,10 +15,11 @@ Plug 'scwood/vim-hybrid'
 Plug 'rakr/vim-one'
 Plug 'google/vim-colorscheme-primary'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 set background=dark
-colorscheme hybrid
+colorscheme seoul256
 
 hi CursorLine cterm=underline
 
