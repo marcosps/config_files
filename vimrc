@@ -7,25 +7,19 @@ set noswapfile
 set wildmenu
 set path+=**
 set cursorline
-syntax on
+set term=screen-256color
+syntax enable
 
 call plug#begin('~/.vim/plugged')
+Plug 'scwood/vim-hybrid'
+Plug 'rakr/vim-one'
+Plug 'google/vim-colorscheme-primary'
 Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
-" set black background
-let g:quantum_black=1
 set background=dark
+colorscheme hybrid
 
-" set comments in italic
-let g:quantum_italics=1
-
-if has('termguicolors')
-	set termguicolors
-endif
-colorscheme quantum
-
-" CursorLine is set by quantum, so reset it after colorscheme
 hi CursorLine cterm=underline
 
 let &colorcolumn=join(range(81,82),",")
