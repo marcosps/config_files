@@ -1,5 +1,5 @@
-set ic
-set nu
+set ignorecase
+set number
 set smartindent
 set spell spelllang=en
 set nobackup
@@ -40,3 +40,8 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" Map new Escape Key
+imap ,. <Esc>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
