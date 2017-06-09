@@ -11,6 +11,8 @@ function install() {
 			vim \
 			mutt \
 			git \
+			subversion \
+			clang \
 			tmux \
 			mtdev-devel \
 			libwacom-devel \
