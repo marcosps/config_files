@@ -10,7 +10,10 @@ set cursorline
 set tabstop=8 shiftwidth=8 softtabstop=0
 set noexpandtab
 set hlsearch
-syntax enable
+set colorcolumn=80,81,120,121
+syntax on
+
+filetype plugin on
 
 " Fix mac os delete button..
 set backspace=eol,start
@@ -30,8 +33,7 @@ set laststatus=2
 let g:airline_theme='distinguished'
 
 hi CursorLine cterm=underline
-
-let &colorcolumn=join(range(81,82),",")
+hi ColorColumn ctermbg=DarkGrey
 
 map <up> <nop>
 map <down> <nop>
