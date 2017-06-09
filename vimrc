@@ -34,8 +34,7 @@ set laststatus=2
 let g:airline_theme='distinguished'
 
 hi CursorLine cterm=underline
- " dark blue
-hi ColorColumn ctermbg=18
+hi ColorColumn ctermbg=DarkGrey
 
 map <up> <nop>
 map <down> <nop>
