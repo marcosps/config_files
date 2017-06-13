@@ -23,6 +23,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set background=dark
@@ -42,6 +43,10 @@ map <right> <nop>
 
 " Map new Escape Key
 imap ,. <Esc>
+
+" map commenters
+nmap // <leader>c<space>
+vmap // <leader>cs
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
