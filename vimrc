@@ -14,10 +14,18 @@ set colorcolumn=80,81,120,121
 set nowrap
 syntax on
 
+" set folding options
+set foldmethod=syntax
+set foldlevelstart=1
+set foldnestmax=2
+let javaScript_fold=1
+let sh_fold_enabled=1
+let c_fold_enabled=1
+
 filetype plugin on
 
 " Fix mac os delete button..
-set backspace=eol,start
+set backspace=eol,start,indent
 
 call plug#begin('~/.vim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
