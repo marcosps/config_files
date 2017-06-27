@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -45,9 +46,6 @@ let javaScript_fold=1
 let sh_fold_enabled=1
 let c_fold_enabled=1
 
-let g:airline_theme='distinguished'
-let g:enable_bold_font=1
-
 highlight CursorLine cterm=underline
 highlight ColorColumn ctermbg=DarkGrey
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -57,3 +55,9 @@ syntax enable
 filetype plugin on
 
 colorscheme hybrid_material
+
+" Plugins setup
+let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
+
+let g:airline_theme='distinguished'
+let g:enable_bold_font=1
