@@ -30,7 +30,7 @@ function install() {
 		fi
 	fi
 
-	sudo cp bash_config /etc/profile.d
+	sudo cp bash_config.sh /etc/profile.d
 
 	for i in vimrc gitconfig muttrc tmux.conf
 	do
