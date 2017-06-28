@@ -61,3 +61,6 @@ let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
 
 let g:airline_theme='distinguished'
 let g:enable_bold_font=1
+
+" autocommands
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
