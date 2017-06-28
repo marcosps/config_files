@@ -20,7 +20,9 @@ function install() {
 			libunwind-devel \
 			libinput-devel \
 			libevdev-devel \
-			openssl-devel
+			openssl-devel \
+			strace \
+			libxml2
 
 		# install pt spellcheck for vim
 		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
