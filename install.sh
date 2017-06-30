@@ -1,9 +1,16 @@
 #!/bin/bash
 
 function install() {
+	SUDO=$(which sudo 2>/dev/null)
+	# don't execute where it doesn't have (running from a container)
+	if [ -z $SUDO ] ; then
+		SUDO=""
+	fi
+
 	# packages to be installed on a fresh Fedora install
-	if [ "x$(uname)" != "xDarwin" ] && ! [[ "$(uname -v)" =~ "Ubuntu" ]]; then
-		sudo dnf install \
+	if which dnf 2>/dev/null 1>/dev/null
+	then
+		$SUDO dnf install \
 			ctags \
 			gcc \
 			clang \
@@ -24,17 +31,18 @@ function install() {
 			libevdev-devel \
 			openssl-devel \
 			strace \
-			libxml2
+			libxml2 \
+			unzip
 
 		# install pt spellcheck for vim
 		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
 			wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
-			sudo unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
+			$SUDO unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
 			rm /tmp/pt.zip
 		fi
 	fi
 
-	sudo cp bash_config.sh /etc/profile.d
+	$SUDO cp bash_config.sh /etc/profile.d
 
 	for i in vimrc gitconfig muttrc tmux.conf
 	do
