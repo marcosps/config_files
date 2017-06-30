@@ -6,13 +6,15 @@ function install() {
 		sudo dnf install \
 			ctags \
 			gcc \
+			clang \
+			make \
 			meson \
 			acpitool acpica-tools \
+			wget \
 			vim \
 			mutt \
 			git \
 			subversion \
-			clang \
 			tmux \
 			mtdev-devel \
 			libwacom-devel \
@@ -44,7 +46,7 @@ function install() {
 
 	if [ ! -f ~/.vim/autoload/plug.vim ]; then
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-		    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 }
 
