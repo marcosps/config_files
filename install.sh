@@ -14,6 +14,8 @@ function install() {
 			ctags \
 			gcc \
 			clang \
+			kernel-headers \
+			kernel-devel \
 			make \
 			meson \
 			acpitool acpica-tools \
@@ -32,7 +34,8 @@ function install() {
 			openssl-devel \
 			strace \
 			libxml2 \
-			unzip
+			unzip \
+		--best
 
 		# install pt spellcheck for vim
 		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
