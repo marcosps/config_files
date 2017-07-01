@@ -33,7 +33,7 @@ set cursorline
 set tabstop=8 shiftwidth=8 softtabstop=0
 set noexpandtab
 set hlsearch
-set colorcolumn=80,81,120,121
+set colorcolumn=81,82,121,122
 set nowrap
 set background=dark
 set t_Co=256 " enforce 256 color
