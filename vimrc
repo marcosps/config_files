@@ -40,6 +40,7 @@ set t_Co=256 " enforce 256 color
 set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
 set encoding=utf-8
+set noshowmode " don't show mode in default statusbar
 
 " set folding options
 set foldmethod=syntax
