@@ -39,6 +39,7 @@ set background=dark
 set t_Co=256 " enforce 256 color
 set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
+set encoding=utf-8
 
 " set folding options
 set foldmethod=syntax
@@ -61,9 +62,9 @@ colorscheme hybrid_material
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-
 let g:airline_theme='distinguished'
 let g:enable_bold_font=1
+let g:airline_powerline_fonts=1
 
 " autocommands
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
