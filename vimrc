@@ -5,12 +5,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+map <C-n> :NERDTreeToggle<CR>
 
 " Map new Escape Key
 imap ,. <Esc>
