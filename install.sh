@@ -35,6 +35,7 @@ function install() {
 			strace \
 			libxml2 \
 			unzip \
+			docker \
 		--best
 
 		# install pt spellcheck for vim
