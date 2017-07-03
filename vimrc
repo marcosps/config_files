@@ -21,6 +21,12 @@ imap ,. <Esc>
 nmap // <leader>c<space>
 vmap // <leader>cs
 
+colorscheme hybrid_material
+
+syntax enable
+filetype plugin on
+filetype indent on
+
 set ignorecase
 set number
 set smartindent
@@ -47,6 +53,9 @@ set foldmethod=syntax
 set foldlevelstart=1
 set foldnestmax=2
 
+set invlist " show invisible characters
+set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+
 let javaScript_fold=1
 let sh_fold_enabled=1
 let c_fold_enabled=1
@@ -56,11 +65,6 @@ highlight ColorColumn ctermbg=DarkGrey
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-syntax enable
-filetype plugin on
-
-colorscheme hybrid_material
-
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
 let g:airline_theme='distinguished'
@@ -68,4 +72,5 @@ let g:enable_bold_font=1
 let g:airline_powerline_fonts=1
 
 " autocommands
-au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+autocmd FileType python setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=0
