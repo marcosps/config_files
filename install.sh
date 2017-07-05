@@ -14,6 +14,11 @@ function install() {
 			ctags \
 			gcc \
 			clang \
+			llvm-devel \
+			llvm-static \
+			luajit-devel \
+			iperf \
+			netperf2 \
 			kernel-headers \
 			kernel-devel \
 			make \
