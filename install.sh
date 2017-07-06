@@ -17,12 +17,15 @@ function install() {
 			llvm-devel \
 			llvm-static \
 			luajit-devel \
+			ncurses-devel \
 			iperf \
-			netperf2 \
+			elfutils-libelf-devel \
 			kernel-headers \
 			kernel-devel \
 			make \
 			meson \
+			autoconf \
+			automake \
 			acpitool acpica-tools \
 			wget \
 			vim \
