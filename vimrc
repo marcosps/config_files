@@ -17,9 +17,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Map new Escape Key
 imap ,. <Esc>
-" map commenters
+" map toggle commenters
 nmap // <leader>c<space>
-vmap // <leader>cs
+vmap // <leader>c<space>
 
 colorscheme hybrid_material
 
