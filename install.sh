@@ -56,7 +56,7 @@ function install() {
 
 	$SUDO cp bash_config.sh /etc/profile.d
 
-	for i in vimrc gitconfig muttrc tmux.conf
+	for i in vimrc gitconfig muttrc tmux.conf tmux-powerlinerc
 	do
 		cp $i ~/.$i
 	done
@@ -68,6 +68,12 @@ function install() {
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
+
+	if [ ! -d ~/.vim/tmux-powerline ]; then
+		git clone https://github.com/erikw/tmux-powerline ~/.vim/tmux-powerline
+	fi
+
+	cp custom-theme.sh ~/.vim/tmux-powerline/themes
 }
 
 install
