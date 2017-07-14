@@ -47,6 +47,9 @@ set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
 set encoding=utf-8
 set noshowmode " don't show mode in default statusbar
+"TODO: use vi powerline from powerline when it can show file diffs into
+"statusbar
+"set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
 
 " set folding options
 set foldmethod=syntax

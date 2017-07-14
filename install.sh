@@ -63,9 +63,9 @@ function install() {
 		cp $i ~/.$i
 	done
 
-	mkdir -p ~/.config/powerline/themes/tmux
-
-	cp default.json ~/.config/powerline/themes/tmux/
+	mkdir -p ~/.config/powerline/themes/{tmux,vim}
+	cp tmux_default.json ~/.config/powerline/themes/tmux/default.json
+	cp vim_default.json ~/.config/powerline/themes/vim/default.json
 
 	#create signature file
 	echo $'Thanks,\n\tMarcos' >~/.signature
