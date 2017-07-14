@@ -54,12 +54,18 @@ function install() {
 		fi
 	fi
 
+	pip install --user powerline-status netifaces
+
 	$SUDO cp bash_config.sh /etc/profile.d
 
-	for i in vimrc gitconfig muttrc tmux.conf tmux-powerlinerc
+	for i in vimrc gitconfig muttrc tmux.conf
 	do
 		cp $i ~/.$i
 	done
+
+	mkdir -p ~/.config/powerline/themes/tmux
+
+	cp default.json ~/.config/powerline/themes/tmux/
 
 	#create signature file
 	echo $'Thanks,\n\tMarcos' >~/.signature
@@ -68,12 +74,6 @@ function install() {
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
-
-	if [ ! -d ~/.vim/tmux-powerline ]; then
-		git clone https://github.com/erikw/tmux-powerline ~/.vim/tmux-powerline
-	fi
-
-	cp custom-theme.sh ~/.vim/tmux-powerline/themes
 }
 
 install
