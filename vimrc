@@ -35,6 +35,7 @@ set nobackup
 set noswapfile
 set wildmenu
 set path+=**
+set path+=$LINUX_GIT_PATH/include
 set cursorline
 set tabstop=8 shiftwidth=8 softtabstop=0
 set noexpandtab
@@ -63,7 +64,6 @@ let javaScript_fold=1
 let sh_fold_enabled=1
 let c_fold_enabled=1
 
-highlight CursorLine cterm=underline
 highlight ColorColumn ctermbg=DarkGrey
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
