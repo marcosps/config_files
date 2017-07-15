@@ -44,6 +44,9 @@ function install() {
 			libxml2 \
 			unzip \
 			docker \
+			libnetfilter*-devel \
+			libnfnetlink* \
+			conntrack-tools \
 		--best
 
 		# install pt spellcheck for vim
