@@ -47,7 +47,9 @@ function install() {
 			libnetfilter*-devel \
 			libnfnetlink* \
 			conntrack-tools \
-		--best
+			redhat-rpm-config \
+			python-devel \
+		--best --verbose
 
 		# install pt spellcheck for vim
 		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
