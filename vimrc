@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'farmergreg/vim-lastplace'
 call plug#end()
 
 map <up> <nop>
