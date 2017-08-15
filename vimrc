@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'farmergreg/vim-lastplace'
+Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
 map <up> <nop>
@@ -22,7 +23,7 @@ imap ,. <Esc>
 nmap // <leader>c<space>
 vmap // <leader>c<space>
 
-colorscheme hybrid_material
+colorscheme quantum
 
 syntax enable
 filetype plugin on
@@ -61,6 +62,10 @@ set foldnestmax=2
 set invlist " show invisible characters
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 
+if has('termguicolors')
+	set termguicolors
+endif
+
 let javaScript_fold=1
 let sh_fold_enabled=1
 let c_fold_enabled=1
@@ -71,9 +76,12 @@ match ExtraWhitespace /\s\+$/
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='distinguished'
+let g:airline_theme='quantum'
 let g:enable_bold_font=1
 let g:airline_powerline_fonts=1
+let g:quantum_black=1
+let g:quantum_italics=1
+set background=dark
 
 " autocommands
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
