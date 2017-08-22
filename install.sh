@@ -22,6 +22,8 @@ function install() {
 			elfutils-libelf-devel \
 			kernel-headers \
 			kernel-devel \
+			python2-sphinx \
+			texlive-xetex-bin \
 			make \
 			meson \
 			autoconf \
