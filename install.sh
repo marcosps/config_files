@@ -24,10 +24,12 @@ function install() {
 			kernel-devel \
 			python2-sphinx \
 			texlive-xetex-bin \
+			texlive-collection-xetex \
 			make \
 			meson \
 			autoconf \
 			automake \
+			gettext-devel \
 			acpitool acpica-tools \
 			wget \
 			vim \
@@ -51,6 +53,7 @@ function install() {
 			conntrack-tools \
 			redhat-rpm-config \
 			python-devel \
+			flatpak flatpak-builder \
 		--best --verbose
 
 		# install pt spellcheck for vim
