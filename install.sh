@@ -25,6 +25,36 @@ function install() {
 			python2-sphinx \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
+			texlive-tabulary \
+			texlive-cmap \
+			texlive-pdftex	texlive-pdftex-bin \
+			texlive-ec \
+			texlive-ams* \
+			texlive-adjustbox \
+			texlive-anyfontsize \
+			texlive-oberdiek \
+			texlive-tools \
+			texlive-capt-of \
+			texlive-eqparbox \
+			texlive-euenc \
+			texlive-fncychap \
+			texlive-mdwtools \
+			texlive-framed \
+			texlive-luatex85 \
+			texlive-multirow \
+			texlive-needspace \
+			texlive-psnfss \
+			texlive-parskip \
+			texlive-polyglossia \
+			texlive-threeparttable \
+			texlive-titlesec \
+			texlive-ucs \
+			texlive-upquote \
+			texlive-wrapfig \
+			texlive-langcode \
+			texlive-langsci \
+			texlive-babel-english \
+			texlive-hyphen-english \
 			make \
 			meson \
 			autoconf \
