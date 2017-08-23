@@ -14,6 +14,7 @@ function install() {
 			ctags \
 			gcc \
 			clang \
+			clang-analyzer \
 			llvm-devel \
 			llvm-static \
 			luajit-devel \
