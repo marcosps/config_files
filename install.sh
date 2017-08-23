@@ -85,6 +85,7 @@ function install() {
 			redhat-rpm-config \
 			python-devel \
 			flatpak flatpak-builder \
+			libseccomp-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
