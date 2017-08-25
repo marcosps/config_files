@@ -86,6 +86,8 @@ function install() {
 			python-devel \
 			flatpak flatpak-builder \
 			libseccomp-devel \
+			SDL-devel \
+			SDL_image-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
