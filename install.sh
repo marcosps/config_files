@@ -86,8 +86,16 @@ function install() {
 			python-devel \
 			flatpak flatpak-builder \
 			libseccomp-devel \
-			SDL-devel \
-			SDL_image-devel \
+			SDL2-devel \
+			SDL2_image-devel \
+			dbus-devel \
+			gstreamer1-devel \
+			gstreamer1-plugins-base-devel \
+			libv4l-devel \
+			doxygen \
+			xmltoman \
+			libva-devel \
+			jack-audio-connection-kit-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
