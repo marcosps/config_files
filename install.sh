@@ -96,6 +96,7 @@ function install() {
 			xmltoman \
 			libva-devel \
 			jack-audio-connection-kit-devel \
+			libv4l-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
