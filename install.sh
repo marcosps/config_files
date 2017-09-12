@@ -106,7 +106,7 @@ function install() {
 		fi
 	fi
 
-	pip install --user powerline-status netifaces thefuck
+	python -m pip install --user powerline-status netifaces thefuck -U
 
 	$SUDO cp bash_config.sh /etc/profile.d
 
