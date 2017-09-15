@@ -100,6 +100,15 @@ function install() {
 			htop  \
 			libtool \
 			gtk-doc \
+			gobject-introspection-devel \
+			libcap-devel \
+			libarchive-devel \
+			libsoup-devel \
+			gpgme-devel \
+			polkit-devel \
+			ostree-devel \
+			fuse-devel \
+			json-glib-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
