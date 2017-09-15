@@ -98,6 +98,8 @@ function install() {
 			jack-audio-connection-kit-devel \
 			libv4l-devel \
 			htop  \
+			libtool \
+			gtk-doc \
 		--best --verbose
 
 		# install pt spellcheck for vim
