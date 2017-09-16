@@ -2,10 +2,7 @@
 	"segments": {
 		"right": [
 			{
-				"function": "powerline.segments.common.net.internal_ip",
-				"args": {
-					"interface" : "wlp3s0f0"
-				}
+				"function": "powerline.segments.common.net.internal_ip"
 			},
 			{
 				"function": "powerline.segments.common.time.date",
