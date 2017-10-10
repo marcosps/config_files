@@ -17,6 +17,7 @@ function install() {
 			clang-analyzer \
 			llvm-devel \
 			llvm-static \
+			virtme \
 			luajit-devel \
 			ncurses-devel \
 			iperf \
@@ -84,7 +85,8 @@ function install() {
 			conntrack-tools \
 			redhat-rpm-config \
 			python-devel \
-			flatpak flatpak-builder \
+			flatpak flatpak-devel flatpak-builder \
+			xmlto \
 			libseccomp-devel \
 			SDL2-devel \
 			SDL2_image-devel \
