@@ -18,6 +18,7 @@ function install() {
 			llvm-devel \
 			llvm-static \
 			virtme \
+			qemu \
 			luajit-devel \
 			ncurses-devel \
 			iperf \
