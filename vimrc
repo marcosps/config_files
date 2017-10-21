@@ -1,13 +1,11 @@
 call plug#begin('~/.vim/plugged')
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'farmergreg/vim-lastplace'
-Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 map <up> <nop>
@@ -22,8 +20,6 @@ imap ,. <Esc>
 " map toggle commenters
 nmap // <leader>c<space>
 vmap // <leader>c<space>
-
-colorscheme quantum
 
 syntax enable
 filetype plugin on
@@ -76,12 +72,13 @@ match ExtraWhitespace /\s\+$/
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='quantum'
+let g:airline_theme='onedark'
 let g:enable_bold_font=1
 let g:airline_powerline_fonts=1
-let g:quantum_black=1
-let g:quantum_italics=1
+let g:onedark_terminal_italics=1
 set background=dark
+
+colorscheme onedark
 
 " autocommands
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
