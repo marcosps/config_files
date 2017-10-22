@@ -6,6 +6,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'farmergreg/vim-lastplace'
 Plug 'joshdick/onedark.vim'
+Plug 'vim-utils/vim-man'
 call plug#end()
 
 map <up> <nop>
