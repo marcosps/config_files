@@ -122,7 +122,8 @@ function install() {
 		fi
 	fi
 
-	python -m pip install --user powerline-status netifaces thefuck -U
+	python -m pip install --user powerline-status netifaces thefuck pelican \
+		markdown ghp-import -U
 
 	$SUDO cp bash_config.sh /etc/profile.d
 
