@@ -18,9 +18,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Map new Escape Key
 imap ,. <Esc>
+
 " map toggle commenters
-nmap // <leader>c<space>
-vmap // <leader>c<space>
+nmap // <leader>cs
+vmap // <leader>cs
 
 syntax enable
 filetype plugin on
@@ -78,6 +79,14 @@ let g:enable_bold_font=1
 let g:airline_powerline_fonts=1
 let g:onedark_terminal_italics=1
 set background=dark
+
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 colorscheme onedark
 
