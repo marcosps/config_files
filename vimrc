@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'farmergreg/vim-lastplace'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-utils/vim-man'
+Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
 map <up> <nop>
@@ -42,7 +43,6 @@ set noexpandtab
 set hlsearch
 set colorcolumn=81,82,121,122
 set nowrap
-set background=dark
 set t_Co=256 " enforce 256 color
 set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
@@ -74,11 +74,10 @@ match ExtraWhitespace /\s\+$/
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='onedark'
+let g:airline_theme='quantum'
 let g:enable_bold_font=1
 let g:airline_powerline_fonts=1
-let g:onedark_terminal_italics=1
-set background=dark
+let g:quantum_italics=1
 
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -88,7 +87,7 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-colorscheme onedark
+colorscheme quantum
 
 " autocommands
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
