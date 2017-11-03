@@ -8,6 +8,7 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-utils/vim-man'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'stfl/meson.vim'
 call plug#end()
 
 map <up> <nop>
