@@ -109,6 +109,7 @@ function install() {
 			polkit-devel \
 			ostree-devel \
 			fuse-devel \
+			skopeo \
 		--best --verbose
 
 		# install pt spellcheck for vim
