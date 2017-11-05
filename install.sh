@@ -10,9 +10,11 @@ function install() {
 	# packages to be installed on a fresh Fedora install
 	if which dnf 2>/dev/null 1>/dev/null
 	then
+		$SUDO dnf build-dep bubblewrap bwrap-oci \
+			flatpak
+
 		$SUDO dnf install \
 			ctags \
-			gcc \
 			clang \
 			clang-analyzer \
 			llvm-devel \
@@ -60,8 +62,6 @@ function install() {
 			texlive-hyphen-english \
 			make \
 			meson \
-			autoconf \
-			automake \
 			gettext-devel \
 			acpitool acpica-tools \
 			wget \
@@ -88,7 +88,6 @@ function install() {
 			python-devel \
 			flatpak flatpak-devel flatpak-builder \
 			xmlto \
-			libseccomp-devel \
 			SDL2-devel \
 			SDL2_image-devel \
 			dbus-devel \
@@ -101,7 +100,6 @@ function install() {
 			jack-audio-connection-kit-devel \
 			libv4l-devel \
 			htop  \
-			libtool \
 			gtk-doc \
 			gobject-introspection-devel \
 			libcap-devel \
@@ -111,7 +109,6 @@ function install() {
 			polkit-devel \
 			ostree-devel \
 			fuse-devel \
-			json-glib-devel \
 		--best --verbose
 
 		# install pt spellcheck for vim
