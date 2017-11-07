@@ -11,7 +11,8 @@ function install() {
 	if which dnf 2>/dev/null 1>/dev/null
 	then
 		$SUDO dnf build-dep bubblewrap bwrap-oci \
-			flatpak
+			flatpak \
+			libinput
 
 		$SUDO dnf install \
 			ctags \
@@ -61,21 +62,15 @@ function install() {
 			texlive-babel-english \
 			texlive-hyphen-english \
 			make \
-			meson \
 			gettext-devel \
 			acpitool acpica-tools \
 			wget \
 			vim \
 			mutt \
-			git \
 			subversion \
 			tmux \
-			mtdev-devel \
-			libwacom-devel \
 			sparse \
-			libunwind-devel \
 			libinput-devel \
-			libevdev-devel \
 			openssl-devel \
 			strace \
 			libxml2 \
