@@ -15,6 +15,7 @@ function install() {
 			libinput
 
 		$SUDO dnf install \
+			buildah \
 			ctags \
 			clang \
 			clang-analyzer \
@@ -105,6 +106,7 @@ function install() {
 			ostree-devel \
 			fuse-devel \
 			skopeo \
+			udev-browse \
 		--best --verbose
 
 		# install pt spellcheck for vim
