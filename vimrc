@@ -9,6 +9,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-utils/vim-man'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'stfl/meson.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 map <up> <nop>
@@ -88,6 +89,16 @@ let g:NERDAltDelims_java = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" settings of syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 colorscheme quantum
 
