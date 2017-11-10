@@ -3,7 +3,7 @@
 function install() {
 	SUDO=$(which sudo 2>/dev/null)
 	# don't execute where it doesn't have (running from a container)
-	if [ -z $SUDO ] ; then
+	if [ -z "$SUDO" ] ; then
 		SUDO=""
 	fi
 
@@ -21,12 +21,18 @@ function install() {
 			clang \
 			clang-analyzer \
 			clang-tools-extra \
+			docker \
+			doxygen \
+			flatpak flatpak-devel flatpak-builder \
+			fuse-devel \
 			llvm-devel \
 			llvm-static \
 			pylint \
+			python-devel \
 			python2-sphinx \
 			python2-flake8 \
 			python3-flake8 \
+			ShellCheck \
 			virtme \
 			qemu \
 			luajit-devel \
@@ -81,13 +87,10 @@ function install() {
 			strace \
 			libxml2 \
 			unzip \
-			docker \
 			libnetfilter*-devel \
 			libnfnetlink* \
 			conntrack-tools \
 			redhat-rpm-config \
-			python-devel \
-			flatpak flatpak-devel flatpak-builder \
 			xmlto \
 			SDL2-devel \
 			SDL2_image-devel \
@@ -95,7 +98,6 @@ function install() {
 			gstreamer1-devel \
 			gstreamer1-plugins-base-devel \
 			libv4l-devel \
-			doxygen \
 			xmltoman \
 			libva-devel \
 			jack-audio-connection-kit-devel \
@@ -109,7 +111,6 @@ function install() {
 			gpgme-devel \
 			polkit-devel \
 			ostree-devel \
-			fuse-devel \
 			skopeo \
 			udev-browse \
 		--best --verbose
