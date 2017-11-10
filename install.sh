@@ -16,11 +16,17 @@ function install() {
 
 		$SUDO dnf install \
 			buildah \
+			cppcheck \
 			ctags \
 			clang \
 			clang-analyzer \
+			clang-tools-extra \
 			llvm-devel \
 			llvm-static \
+			pylint \
+			python2-sphinx \
+			python2-flake8 \
+			python3-flake8 \
 			virtme \
 			qemu \
 			luajit-devel \
@@ -29,7 +35,6 @@ function install() {
 			elfutils-libelf-devel \
 			kernel-headers \
 			kernel-devel \
-			python2-sphinx \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
 			texlive-tabulary \
