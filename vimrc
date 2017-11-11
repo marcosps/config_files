@@ -8,6 +8,7 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-utils/vim-man'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'trevordmiller/nova-vim'
 Plug 'stfl/meson.vim'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
@@ -71,10 +72,6 @@ let javaScript_fold=1
 let sh_fold_enabled=1
 let c_fold_enabled=1
 
-highlight ColorColumn ctermbg=DarkGrey
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
 let g:airline_theme='quantum'
@@ -100,7 +97,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-colorscheme quantum
+colorscheme nova
+
+highlight ColorColumn guibg=DarkGray
 
 " autocommands
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
