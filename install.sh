@@ -15,6 +15,7 @@ function install() {
 			libinput
 
 		$SUDO dnf install \
+			acpitool acpica-tools \
 			buildah \
 			cppcheck \
 			ctags \
@@ -23,24 +24,39 @@ function install() {
 			clang-tools-extra \
 			docker \
 			doxygen \
+			elfutils-libelf-devel \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
+			iotop \
+			iperf \
+			kernel-headers \
+			kernel-devel \
+			libarchive-devel \
+			libcap-devel \
+			libinput-devel \
+			libnetfilter*-devel \
+			libnfnetlink* \
+			libsoup-devel \
+			libv4l-devel \
+			libva-devel \
+			libxml2 \
 			llvm-devel \
 			llvm-static \
+			luajit-devel \
+			make \
+			mutt \
+			openssl-devel \
+			ncurses-devel \
 			pylint \
 			python-devel \
 			python2-sphinx \
 			python2-flake8 \
 			python3-flake8 \
-			ShellCheck \
-			virtme \
 			qemu \
-			luajit-devel \
-			ncurses-devel \
-			iperf \
-			elfutils-libelf-devel \
-			kernel-headers \
-			kernel-devel \
+			ShellCheck \
+			sparse \
+			strace \
+			subversion \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
 			texlive-tabulary \
@@ -73,41 +89,25 @@ function install() {
 			texlive-langsci \
 			texlive-babel-english \
 			texlive-hyphen-english \
-			make \
-			gettext-devel \
-			acpitool acpica-tools \
-			wget \
-			vim \
-			mutt \
-			subversion \
 			tmux \
-			sparse \
-			libinput-devel \
-			openssl-devel \
-			strace \
-			libxml2 \
 			unzip \
-			libnetfilter*-devel \
-			libnfnetlink* \
+			vim \
+			virtme \
+			wget \
+			xmlto \
+			xmltoman \
+			gettext-devel \
 			conntrack-tools \
 			redhat-rpm-config \
-			xmlto \
 			SDL2-devel \
 			SDL2_image-devel \
 			dbus-devel \
 			gstreamer1-devel \
 			gstreamer1-plugins-base-devel \
-			libv4l-devel \
-			xmltoman \
-			libva-devel \
 			jack-audio-connection-kit-devel \
-			libv4l-devel \
 			htop  \
 			gtk-doc \
 			gobject-introspection-devel \
-			libcap-devel \
-			libarchive-devel \
-			libsoup-devel \
 			gpgme-devel \
 			polkit-devel \
 			ostree-devel \
