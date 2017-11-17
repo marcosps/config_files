@@ -1,12 +1,27 @@
 #!/bin/bash
 
-function install() {
-	SUDO=$(which sudo 2>/dev/null)
-	# don't execute where it doesn't have (running from a container)
-	if [ -z "$SUDO" ] ; then
-		SUDO=""
-	fi
+SUDO=$(which sudo 2>/dev/null)
+# don't execute where it doesn't have (running from a container)
+if [ -z "$SUDO" ] ; then
+	SUDO=""
+fi
 
+function debug() {
+	if which dnf 2>/dev/null 1>/dev/null
+	then
+		$SUDO dnf debuginfo-install kernel-core-"$(uname -r)" \
+			--best --verbose
+
+		$SUDO dnf install \
+			kernel-debug-"$(uname -r)" \
+			sparse \
+			strace \
+			systemtap \
+			--best --verbose
+	fi
+}
+
+function install() {
 	# packages to be installed on a fresh Fedora install
 	if which dnf 2>/dev/null 1>/dev/null
 	then
@@ -29,7 +44,6 @@ function install() {
 			fuse-devel \
 			iotop \
 			iperf \
-			kernel-debug-"$(uname -r)" \
 			kernel-devel \
 			kernel-headers \
 			libarchive-devel \
@@ -55,10 +69,7 @@ function install() {
 			python3-flake8 \
 			qemu \
 			ShellCheck \
-			sparse \
-			strace \
 			subversion \
-			systemtap \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
 			texlive-tabulary \
@@ -149,3 +160,6 @@ function install() {
 }
 
 install
+if [ "$1" == "debug" ]; then
+	debug
+fi
