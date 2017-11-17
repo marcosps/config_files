@@ -66,6 +66,7 @@ function install() {
 			python-devel \
 			python2-sphinx \
 			python2-flake8 \
+			python3-devel \
 			python3-flake8 \
 			qemu \
 			ShellCheck \
