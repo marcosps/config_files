@@ -29,8 +29,9 @@ function install() {
 			fuse-devel \
 			iotop \
 			iperf \
-			kernel-headers \
+			kernel-debug-"$(uname -r)" \
 			kernel-devel \
+			kernel-headers \
 			libarchive-devel \
 			libcap-devel \
 			libinput-devel \
@@ -57,6 +58,7 @@ function install() {
 			sparse \
 			strace \
 			subversion \
+			systemtap \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
 			texlive-tabulary \
