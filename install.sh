@@ -9,15 +9,15 @@ fi
 function debug() {
 	if which dnf 2>/dev/null 1>/dev/null
 	then
-		$SUDO dnf debuginfo-install kernel-core-"$(uname -r)" \
-			--best --verbose
+		$SUDO dnf config-manager --set-enabled fedora-debuginfo
 
-		$SUDO dnf install \
-			kernel-debug-"$(uname -r)" \
+		$SUDO dnf install --enablerepo=* \
+			kernel-debuginfo-"$(uname -r)" \
+			kernel-devel-"$(uname -r)" \
 			sparse \
 			strace \
-			systemtap \
-			--best --verbose
+			systemtap systemtap-runtime \
+			--best --verbose -y
 	fi
 }
 
@@ -44,7 +44,6 @@ function install() {
 			fuse-devel \
 			iotop \
 			iperf \
-			kernel-devel \
 			kernel-headers \
 			libarchive-devel \
 			libcap-devel \
