@@ -31,6 +31,7 @@ function install() {
 
 		$SUDO dnf install \
 			acpitool acpica-tools \
+			blktrace \
 			buildah \
 			cppcheck \
 			ctags \
@@ -45,6 +46,7 @@ function install() {
 			iotop \
 			iperf \
 			kernel-headers \
+			kernel-tools \
 			libarchive-devel \
 			libcap-devel \
 			libinput-devel \
