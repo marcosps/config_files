@@ -25,12 +25,18 @@ function install() {
 	# packages to be installed on a fresh Fedora install
 	if which dnf 2>/dev/null 1>/dev/null
 	then
+		$SUDO dnf install \
+			https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm \
+			https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm \
+			-y
+
 		$SUDO dnf build-dep bubblewrap bwrap-oci \
 			flatpak \
 			libinput
 
 		$SUDO dnf install \
 			acpitool acpica-tools \
+			alsa-plugins-pulseaudio \
 			blktrace \
 			buildah \
 			cppcheck \
@@ -41,6 +47,8 @@ function install() {
 			docker \
 			doxygen \
 			elfutils-libelf-devel \
+			ffmpeg \
+			flash-plugin \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
 			iotop \
@@ -49,6 +57,7 @@ function install() {
 			kernel-tools \
 			libarchive-devel \
 			libcap-devel \
+			libcurl \
 			libinput-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
