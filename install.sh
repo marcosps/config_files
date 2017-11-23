@@ -28,6 +28,7 @@ function install() {
 		$SUDO dnf install \
 			https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm \
 			https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm \
+			http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm \
 			-y
 
 		$SUDO dnf build-dep bubblewrap bwrap-oci \
@@ -55,7 +56,7 @@ function install() {
 			iperf \
 			kernel-headers \
 			kernel-tools \
-			lxc lxc-templates lxc-extra debootstrap libvirt debootstrap \
+			lxc lxc-templates lxc-extra libvirt debootstrap \
 			libarchive-devel \
 			libcap-devel \
 			libcurl \
