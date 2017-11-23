@@ -55,6 +55,7 @@ function install() {
 			iperf \
 			kernel-headers \
 			kernel-tools \
+			lxc lxc-templates lxc-extra debootstrap libvirt debootstrap \
 			libarchive-devel \
 			libcap-devel \
 			libcurl \
