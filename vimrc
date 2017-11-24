@@ -3,22 +3,18 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'farmergreg/vim-lastplace'
-Plug 'joshdick/onedark.vim'
 Plug 'vim-utils/vim-man'
-Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'trevordmiller/nova-vim'
 Plug 'stfl/meson.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-
-map <C-n> :NERDTreeToggle<CR>
 
 " Map new Escape Key
 imap ,. <Esc>
@@ -74,18 +70,9 @@ let c_fold_enabled=1
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='quantum'
-let g:enable_bold_font=1
+let g:airline_theme='nova'
 let g:airline_powerline_fonts=1
-let g:quantum_italics=1
-
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
+let g:airline#extensions#tagbar#flags = 'f'
 
 " settings of syntastic
 set statusline+=%#warningmsg#
