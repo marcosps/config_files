@@ -45,13 +45,13 @@ function install() {
 			clang \
 			clang-analyzer \
 			clang-tools-extra \
-			docker \
 			doxygen \
 			elfutils-libelf-devel \
 			ffmpeg \
 			flash-plugin \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
+			gdb \
 			iotop \
 			iperf \
 			kernel-headers \
@@ -137,7 +137,6 @@ function install() {
 			gpgme-devel \
 			polkit-devel \
 			ostree-devel \
-			skopeo \
 			udev-browse \
 		--best --verbose
 
