@@ -153,6 +153,7 @@ function install() {
 		markdown ghp-import -U
 
 	$SUDO cp bash_config.sh /etc/profile.d
+	$SUDO cp default.gdb /etc/gdbinit.d/
 
 	for i in vimrc gitconfig muttrc tmux.conf
 	do
