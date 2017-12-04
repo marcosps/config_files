@@ -159,6 +159,9 @@ function install() {
 		cp configs/$i ~/.$i
 	done
 
+	mkdir -p ~/.config/lxc
+	cp configs/lxc_default.conf ~/.config/lxc/default.conf
+
 	mkdir -p ~/.config/powerline/themes/{tmux,vim}
 	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
 	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
