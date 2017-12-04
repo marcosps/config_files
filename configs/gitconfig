@@ -1,0 +1,18 @@
+[user]
+	name = Marcos Paulo de Souza
+	email = marcos.souza.org@gmail.com
+
+[sendemail]
+	from = Marcos Paulo de Souza <marcos.souza.org@gmail.com>
+	smtpserver = smtp.gmail.com
+	smtpuser = marcos.souza.org@gmail.com
+	smtpencryption = tls
+	smtpserverport = 587
+	cccmd = ./scripts/get_maintainer.pl -i
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+	mergestyle = diff3
+[mergetools]
+	prompt = false
