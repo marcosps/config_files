@@ -6,6 +6,43 @@ if [ -z "$SUDO" ] ; then
 	SUDO=""
 fi
 
+function config() {
+	# install pt spellcheck for vim
+	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
+		wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
+		$SUDO unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
+		rm /tmp/pt.zip
+	fi
+
+	python -m pip install --user powerline-status netifaces thefuck pelican \
+		markdown ghp-import -U
+
+	$SUDO cp configs/bash_config.sh /etc/profile.d
+	$SUDO mkdir -p /etc/gdbinit.d/
+	$SUDO cp configs/default.gdb /etc/gdbinit.d/
+
+	for i in vimrc gitconfig muttrc tmux.conf
+	do
+		cp configs/$i ~/.$i
+	done
+
+	mkdir -p ~/.config/lxc
+	cp configs/lxc_default.conf ~/.config/lxc/default.conf
+
+	mkdir -p ~/.config/powerline/themes/{tmux,vim}
+	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
+	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
+
+	#create signature file
+	echo $'Thanks,\n\tMarcos' >~/.signature
+
+	if [ ! -f ~/.vim/autoload/plug.vim ]; then
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	fi
+
+}
+
 function debug() {
 	if which dnf 2>/dev/null 1>/dev/null
 	then
@@ -139,44 +176,18 @@ function install() {
 			ostree-devel \
 			udev-browse \
 		--best --verbose
-
-		# install pt spellcheck for vim
-		if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
-			wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
-			$SUDO unzip /tmp/pt.zip -d /usr/share/vim/vim80/spell/
-			rm /tmp/pt.zip
-		fi
-	fi
-
-	python -m pip install --user powerline-status netifaces thefuck pelican \
-		markdown ghp-import -U
-
-	$SUDO cp configs/bash_config.sh /etc/profile.d
-	$SUDO mkdir -p /etc/gdbinit.d/
-	$SUDO cp configs/default.gdb /etc/gdbinit.d/
-
-	for i in vimrc gitconfig muttrc tmux.conf
-	do
-		cp configs/$i ~/.$i
-	done
-
-	mkdir -p ~/.config/lxc
-	cp configs/lxc_default.conf ~/.config/lxc/default.conf
-
-	mkdir -p ~/.config/powerline/themes/{tmux,vim}
-	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
-	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
-
-	#create signature file
-	echo $'Thanks,\n\tMarcos' >~/.signature
-
-	if [ ! -f ~/.vim/autoload/plug.vim ]; then
-		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 }
 
-install
 if [ "$1" == "debug" ]; then
 	debug
+elif [ "$1" == "config" ]; then
+	config
+elif [ "$1" == "all" ]; then
+	config
+	debug
+	install
+else
+	echo "Usage: install.sh <debug|config|all>"
+	exit 1
 fi
