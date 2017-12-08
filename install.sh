@@ -27,7 +27,9 @@ function config() {
 	done
 
 	mkdir -p ~/.config/lxc
-	cp configs/lxc_default.conf ~/.config/lxc/default.conf
+	cp configs/lxc/default.conf ~/.config/lxc/default.conf
+	$SUDO cp configs/lxc/etc_default.conf /etc/lxc/default.conf
+	$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
 
 	mkdir -p ~/.config/powerline/themes/{tmux,vim}
 	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
