@@ -14,8 +14,7 @@ function config() {
 		rm /tmp/pt.zip
 	fi
 
-	python -m pip install --user powerline-status netifaces thefuck pelican \
-		markdown ghp-import -U
+	python -m pip install --user powerline-status netifaces thefuck -U
 
 	$SUDO cp configs/bash_config.sh /etc/profile.d
 	$SUDO mkdir -p /etc/gdbinit.d/
