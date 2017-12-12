@@ -110,6 +110,10 @@ function install() {
 			mutt \
 			openssl-devel \
 			ncurses-devel \
+			policycoreutils policycoreutils-python \
+				selinux-policy selinux-policy-targeted \
+				libselinux setroubleshoot-server \
+				setools setools-console mcstrans \
 			pylint \
 			python-devel \
 			python2-sphinx \
@@ -183,9 +187,9 @@ if [ "$1" == "debug" ]; then
 elif [ "$1" == "config" ]; then
 	config
 elif [ "$1" == "all" ]; then
+	install
 	config
 	debug
-	install
 else
 	echo "Usage: install.sh <debug|config|all>"
 	exit 1
