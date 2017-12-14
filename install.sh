@@ -118,7 +118,7 @@ function install() {
 			openssl-devel \
 			ncurses-devel \
 			policycoreutils policycoreutils-python \
-				selinux-policy selinux-policy-targeted \
+				selinux-policy selinux-policy-devel selinux-policy-targeted \
 				libselinux setroubleshoot-server \
 				setools setools-console mcstrans \
 			pylint \
