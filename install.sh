@@ -6,6 +6,29 @@ if [ -z "$SUDO" ] ; then
 	SUDO=""
 fi
 
+DISTRO=""
+ITEMS=( apt dnf )
+for i in "${ITEMS[@]}"
+do
+	CHECK="$(which $i 2>/dev/null)"
+	if [ ! -z "$CHECK" ]; then
+		case $i in
+		apt)
+			DISTRO="debian"
+			;;
+		dnf)
+			DISTRO="redhat"
+			;;
+		esac
+		break
+	fi
+done
+
+if [ -z "$DISTRO" ]; then
+	echo "Distro not found. Aborting"
+	exit 1
+fi
+
 function config() {
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
@@ -49,7 +72,7 @@ function config() {
 
 }
 
-function debug() {
+function fedora_debug() {
 	if which dnf 2>/dev/null 1>/dev/null
 	then
 		$SUDO dnf config-manager --set-enabled fedora-debuginfo
@@ -64,7 +87,7 @@ function debug() {
 	fi
 }
 
-function install() {
+function fedora_install() {
 	# packages to be installed on a fresh Fedora install
 	if which dnf 2>/dev/null 1>/dev/null
 	then
@@ -190,13 +213,21 @@ function install() {
 }
 
 if [ "$1" == "debug" ]; then
-	debug
+	case "$DISTRO" in
+		redhat)
+			fedora_debug
+			;;
+	esac
 elif [ "$1" == "config" ]; then
 	config
 elif [ "$1" == "all" ]; then
-	install
-	config
-	debug
+	case "$DISTRO" in
+		redhat)
+			fedora_install
+			config
+			fedora_debug
+			;;
+	esac
 else
 	echo "Usage: install.sh <debug|config|all>"
 	exit 1
