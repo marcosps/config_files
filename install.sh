@@ -51,7 +51,13 @@ function config() {
 	mkdir -p ~/.config/lxc
 	cp configs/lxc/default.conf ~/.config/lxc/default.conf
 	$SUDO cp configs/lxc/etc_default.conf /etc/lxc/default.conf
-	$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
+	if [ "$DISTRO" = "redhat" ]; then
+		$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
+		$SUDO sh -c 'echo "lxc.net.0.link = virbr0" >> /etc/lxc/default.conf'
+	else
+		$SUDO sh -c 'echo "marcosps veth lxcbr0 10" > /etc/lxc/lxc-usernet'
+		$SUDO sh -c 'echo "lxc.net.0.link = lxcbr0" >> /etc/lxc/default.conf'
+	fi
 
 	mkdir -p ~/.config/powerline/themes/{tmux,vim}
 	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
@@ -85,6 +91,27 @@ function fedora_debug() {
 			systemtap systemtap-runtime \
 			--best --verbose -y
 	fi
+}
+
+function debian_install() {
+	$SUDO apt install \
+		autoconf \
+		curl \
+		exuberant-ctags \
+		flatpak \
+		git git-email \
+		libpam-cgroup libpam-cgfs \
+		libvirt0 \
+		libtool \
+		lxc \
+		m4 \
+		mesa-utils \
+		net-tools \
+		pkg-config \
+		python \
+		python-pip \
+		vim \
+		-y
 }
 
 function fedora_install() {
@@ -227,6 +254,9 @@ elif [ "$1" == "all" ]; then
 			config
 			fedora_debug
 			;;
+		debian)
+			debian_install
+			config
 	esac
 else
 	echo "Usage: install.sh <debug|config|all>"
