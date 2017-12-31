@@ -101,9 +101,12 @@ function debian_install() {
 		flatpak \
 		git git-email \
 		libcap-dev \
+		libevdev-dev \
+		libinput-dev \
 		libpam-cgroup libpam-cgfs \
-		libvirt0 \
+		libudev-dev \
 		libtool \
+		libseccomp-dev \
 		lxc \
 		m4 \
 		mesa-utils \
