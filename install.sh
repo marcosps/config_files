@@ -100,12 +100,14 @@ function debian_install() {
 		exuberant-ctags \
 		flatpak \
 		git git-email \
+		libcap-dev \
 		libpam-cgroup libpam-cgfs \
 		libvirt0 \
 		libtool \
 		lxc \
 		m4 \
 		mesa-utils \
+		meson \
 		net-tools \
 		pkg-config \
 		python \
