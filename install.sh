@@ -103,6 +103,7 @@ function debian_install() {
 		libcap-dev \
 		libevdev-dev \
 		libinput-dev \
+		libnl-route-3-dev \
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
@@ -159,6 +160,7 @@ function fedora_install() {
 			libcap-devel \
 			libcurl \
 			libinput-devel \
+			libnl3-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
 			libsoup-devel \
