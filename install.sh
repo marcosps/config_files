@@ -50,6 +50,7 @@ function config() {
 
 	mkdir -p ~/.config/lxc
 	cp configs/lxc/default.conf ~/.config/lxc/default.conf
+	$SUDO mkdir -p /etc/lxc
 	$SUDO cp configs/lxc/etc_default.conf /etc/lxc/default.conf
 	if [ "$DISTRO" = "redhat" ]; then
 		$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
