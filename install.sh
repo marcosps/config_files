@@ -259,13 +259,12 @@ elif [ "$1" == "all" ]; then
 	case "$DISTRO" in
 		redhat)
 			fedora_install
-			config
-			fedora_debug
 			;;
 		debian)
 			debian_install
-			config
+			;;
 	esac
+	config
 else
 	echo "Usage: install.sh <debug|config|all>"
 	exit 1
