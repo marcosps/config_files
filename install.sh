@@ -97,6 +97,7 @@ function fedora_debug() {
 function debian_install() {
 	$SUDO apt install \
 		autoconf \
+		bison \
 		curl \
 		exuberant-ctags \
 		flatpak \
@@ -138,6 +139,7 @@ function fedora_install() {
 		$SUDO dnf install \
 			acpitool acpica-tools \
 			alsa-plugins-pulseaudio \
+			bison \
 			blktrace \
 			buildah \
 			cppcheck \
