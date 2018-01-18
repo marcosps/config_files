@@ -141,7 +141,6 @@ function fedora_install() {
 			alsa-plugins-pulseaudio \
 			bison \
 			blktrace \
-			buildah \
 			cppcheck \
 			ctags \
 			clang \
@@ -161,6 +160,8 @@ function fedora_install() {
 			lxc lxc-templates lxc-extra libvirt debootstrap \
 			libarchive-devel \
 			libcap-devel \
+			libcgroup \
+				libcgroup-pam libcgroup-tools \
 			libcurl \
 			libinput-devel \
 			libnl3-devel \
