@@ -232,7 +232,6 @@ function fedora_install() {
 			xmltoman \
 			gettext-devel \
 			conntrack-tools \
-			redhat-rpm-config \
 			SDL2-devel \
 			SDL2_image-devel \
 			dbus-devel \
