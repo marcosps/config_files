@@ -105,6 +105,7 @@ function debian_install() {
 		exuberant-ctags \
 		flatpak \
 		git git-email \
+		ldnsutils \
 		libcap-dev \
 		libevdev-dev \
 		libinput-dev \
@@ -123,6 +124,7 @@ function debian_install() {
 		python \
 		python-pip \
 		software-properties-common \
+		traceroute \
 		uuid-dev \
 		vim \
 		-y
