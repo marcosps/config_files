@@ -165,7 +165,7 @@ function fedora_install() {
 			iperf \
 			kernel-headers \
 			kernel-tools \
-			lxc lxc-templates lxc-extra libvirt debootstrap \
+			ldns-utils \
 			libarchive-devel \
 			libcap-devel \
 			libcgroup \
@@ -182,6 +182,7 @@ function fedora_install() {
 			llvm-devel \
 			llvm-static \
 			luajit-devel \
+			lxc lxc-templates lxc-extra libvirt debootstrap \
 			make \
 			mutt \
 			openssl-devel \
