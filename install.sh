@@ -95,7 +95,10 @@ function fedora_debug() {
 
 function debian_install() {
 	$SUDO apt install \
+		apt-transport-https \
 		autoconf \
+		ca-certificates \
+		clang \
 		curl \
 		exuberant-ctags \
 		flatpak \
@@ -103,6 +106,8 @@ function debian_install() {
 		libcap-dev \
 		libevdev-dev \
 		libinput-dev \
+		libnl-3-dev \
+			libnl-cli-3-dev libnl-utils \
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
@@ -115,6 +120,7 @@ function debian_install() {
 		pkg-config \
 		python \
 		python-pip \
+		software-properties-common \
 		vim \
 		-y
 }
