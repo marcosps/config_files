@@ -123,6 +123,7 @@ function debian_install() {
 		python \
 		python-pip \
 		software-properties-common \
+		uuid-dev \
 		vim \
 		-y
 }
