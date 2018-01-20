@@ -50,6 +50,7 @@ function config() {
 
 	mkdir -p ~/.config/lxc
 	cp configs/lxc/default.conf ~/.config/lxc/default.conf
+	$SUDO mkdir -p /etc/lxc
 	$SUDO cp configs/lxc/etc_default.conf /etc/lxc/default.conf
 	if [ "$DISTRO" = "redhat" ]; then
 		$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
@@ -97,6 +98,7 @@ function debian_install() {
 	$SUDO apt install \
 		apt-transport-https \
 		autoconf \
+		bison \
 		ca-certificates \
 		clang \
 		curl \
@@ -142,8 +144,8 @@ function fedora_install() {
 		$SUDO dnf install \
 			acpitool acpica-tools \
 			alsa-plugins-pulseaudio \
+			bison \
 			blktrace \
-			buildah \
 			cppcheck \
 			ctags \
 			clang \
@@ -163,8 +165,11 @@ function fedora_install() {
 			lxc lxc-templates lxc-extra libvirt debootstrap \
 			libarchive-devel \
 			libcap-devel \
+			libcgroup \
+				libcgroup-pam libcgroup-tools \
 			libcurl \
 			libinput-devel \
+			libnl3-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
 			libsoup-devel \
@@ -232,7 +237,6 @@ function fedora_install() {
 			xmltoman \
 			gettext-devel \
 			conntrack-tools \
-			redhat-rpm-config \
 			SDL2-devel \
 			SDL2_image-devel \
 			dbus-devel \
@@ -262,13 +266,12 @@ elif [ "$1" == "all" ]; then
 	case "$DISTRO" in
 		redhat)
 			fedora_install
-			config
-			fedora_debug
 			;;
 		debian)
 			debian_install
-			config
+			;;
 	esac
+	config
 else
 	echo "Usage: install.sh <debug|config|all>"
 	exit 1
