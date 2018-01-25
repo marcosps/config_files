@@ -20,8 +20,8 @@ map <right> <nop>
 imap ,. <Esc>
 
 " map toggle commenters
-nmap // <leader>cs
-vmap // <leader>cs
+nmap // <leader>ci
+vmap // <leader>ci
 
 syntax enable
 filetype plugin on
