@@ -128,6 +128,7 @@ function debian_install() {
 		traceroute \
 		uuid-dev \
 		vim \
+		zfsutils-linux  \
 		-y
 }
 
