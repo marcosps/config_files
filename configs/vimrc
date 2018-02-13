@@ -7,8 +7,8 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'vim-utils/vim-man'
 Plug 'trevordmiller/nova-vim'
 Plug 'stfl/meson.vim'
+Plug 'lzap/vim-selinux'
 Plug 'vim-syntastic/syntastic'
-Plug 'majutsushi/tagbar'
 call plug#end()
 
 map <up> <nop>
