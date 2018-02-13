@@ -109,6 +109,7 @@ function debian_install() {
 		libcap-dev \
 		libevdev-dev \
 		libinput-dev \
+		libncurses5-dev \
 		libnl-3-dev \
 			libnl-cli-3-dev libnl-utils \
 		libpam-cgroup libpam-cgfs \
@@ -127,6 +128,7 @@ function debian_install() {
 		traceroute \
 		uuid-dev \
 		vim \
+		zfsutils-linux  \
 		-y
 }
 
