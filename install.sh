@@ -10,7 +10,7 @@ DISTRO=""
 ITEMS=( apt dnf )
 for i in "${ITEMS[@]}"
 do
-	CHECK="$(which $i 2>/dev/null)"
+	CHECK="$(which "$i" 2>/dev/null)"
 	if [ ! -z "$CHECK" ]; then
 		case $i in
 		apt)
@@ -177,6 +177,7 @@ function fedora_install() {
 			libnl3-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
+			libselinux-devel \
 			libsoup-devel \
 			libv4l-devel \
 			libva-devel \
