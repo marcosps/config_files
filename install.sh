@@ -163,6 +163,7 @@ function fedora_install() {
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
 			gdb \
+			golang \
 			iotop \
 			iperf \
 			kernel-headers \
