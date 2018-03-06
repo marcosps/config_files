@@ -166,6 +166,7 @@ function fedora_install() {
 			golang \
 			iotop \
 			iperf \
+			javaws \
 			kernel-headers \
 			kernel-tools \
 			ldns-utils \
@@ -191,6 +192,7 @@ function fedora_install() {
 			mutt \
 			openssl-devel \
 			ncurses-devel \
+			pam-devel \
 			policycoreutils policycoreutils-gui policycoreutils-python \
 				selinux-policy selinux-policy-devel selinux-policy-targeted \
 				libselinux setroubleshoot-server \
