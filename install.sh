@@ -163,7 +163,7 @@ function fedora_install() {
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
 			gdb \
-			golang \
+			golang golint \
 			iotop \
 			iperf \
 			javaws \
@@ -205,6 +205,7 @@ function fedora_install() {
 			python3-flake8 \
 			qemu \
 			ShellCheck \
+			squashfs-tools \
 			subversion \
 			texlive-xetex-bin \
 			texlive-collection-xetex \
