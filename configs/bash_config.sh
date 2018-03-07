@@ -13,6 +13,9 @@ export GOPATH=$GITROOT/go
 export GOBIN=$GITROOT/go/bin
 mkdir -p $GITROOT/{go,bin}
 
+#add GOBIN to PATH
+export PATH="$PATH:$GOBIN"
+
 # locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
