@@ -164,6 +164,7 @@ function fedora_install() {
 			fuse-devel \
 			gdb \
 			golang golint \
+			gperf \
 			iotop \
 			iperf \
 			javaws \
@@ -176,6 +177,7 @@ function fedora_install() {
 				libcgroup-pam libcgroup-tools \
 			libcurl \
 			libinput-devel \
+			libmount-devel \
 			libnl3-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
