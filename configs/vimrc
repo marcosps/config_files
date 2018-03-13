@@ -9,8 +9,8 @@ Plug 'trevordmiller/nova-vim'
 Plug 'stfl/meson.vim'
 Plug 'lzap/vim-selinux'
 Plug 'vim-syntastic/syntastic'
-Plug 'ajmwagar/vim-deus'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
 map <up> <nop>
@@ -43,7 +43,6 @@ set noexpandtab
 set hlsearch
 set colorcolumn=81,82,121,122
 set nowrap
-set t_Co=256 " enforce 256 color
 set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
 set encoding=utf-8
@@ -61,9 +60,7 @@ set foldnestmax=2
 set invlist " show invisible characters
 set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 
-if has('termguicolors')
-	set termguicolors
-endif
+set termguicolors
 
 let javaScript_fold=1
 let sh_fold_enabled=1
@@ -71,7 +68,7 @@ let c_fold_enabled=1
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='deus'
+let g:airline_theme='quantum'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#flags = 'f'
 
@@ -85,7 +82,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-colorscheme deus
+let g:quantum_black=1
+let g:quantum_italics=1
+set background=dark
+colorscheme quantum
 
 highlight ColorColumn guibg=DarkGray
 
