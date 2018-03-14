@@ -5,12 +5,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'farmergreg/vim-lastplace'
 Plug 'vim-utils/vim-man'
-Plug 'trevordmiller/nova-vim'
 Plug 'stfl/meson.vim'
 Plug 'lzap/vim-selinux'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'fatih/vim-go'
 call plug#end()
 
 map <up> <nop>
@@ -87,8 +87,5 @@ let g:quantum_italics=1
 set background=dark
 colorscheme quantum
 
-highlight ColorColumn guibg=DarkGray
-
 " autocommands
-autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 autocmd FileType python setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=0
