@@ -7,7 +7,6 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'vim-utils/vim-man'
 Plug 'stfl/meson.vim'
 Plug 'lzap/vim-selinux'
-Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'fatih/vim-go'
@@ -41,7 +40,6 @@ set cursorline
 set tabstop=8 shiftwidth=8 softtabstop=0
 set noexpandtab
 set hlsearch
-set colorcolumn=81,82,121,122
 set nowrap
 set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
@@ -86,6 +84,10 @@ let g:quantum_black=1
 let g:quantum_italics=1
 set background=dark
 colorscheme quantum
+
+" change the background of all lines that surpasses 80 columns
+highlight OverLength ctermbg=darkred ctermfg=gray
+match OverLength /\%>80v.\+/
 
 " autocommands
 autocmd FileType python setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=0
