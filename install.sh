@@ -76,7 +76,6 @@ function config() {
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
-
 }
 
 function fedora_debug() {
@@ -156,6 +155,8 @@ function fedora_install() {
 			clang \
 			clang-analyzer \
 			clang-tools-extra \
+			conntrack-tools \
+			dbus-devel \
 			doxygen \
 			elfutils-libelf-devel \
 			ffmpeg \
@@ -163,18 +164,24 @@ function fedora_install() {
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
 			gdb \
-			golang golint \
+			gettext-devel \
+			gobject-introspection-devel \
+			golang golint golang-godoc \
 			gperf \
+			gpgme-devel \
+			gstreamer1-devel gstreamer1-plugins-base-devel \
+			gtk-doc \
+			htop  \
 			iotop \
 			iperf \
+			jack-audio-connection-kit-devel \
 			javaws \
 			kernel-headers \
 			kernel-tools \
 			ldns-utils \
 			libarchive-devel \
 			libcap-devel \
-			libcgroup \
-				libcgroup-pam libcgroup-tools \
+			libcgroup libcgroup-pam libcgroup-tools \
 			libcurl \
 			libinput-devel \
 			libmount-devel \
@@ -186,17 +193,21 @@ function fedora_install() {
 			libv4l-devel \
 			libva-devel \
 			libxml2 \
-			llvm-devel \
-			llvm-static \
+			llvm-devel llvm-static \
 			luajit-devel \
 			lxc lxc-templates lxc-extra libvirt debootstrap \
 			make \
 			mutt \
+			openldap-clients \
 			openssl-devel \
+			ostree-devel \
 			ncurses-devel \
 			pam-devel \
-			policycoreutils policycoreutils-gui policycoreutils-python \
-				selinux-policy selinux-policy-devel selinux-policy-targeted \
+			polkit-devel \
+			policycoreutils policycoreutils-gui \
+				policycoreutils-python \
+				selinux-policy selinux-policy-devel \
+				selinux-policy-targeted \
 				libselinux setroubleshoot-server \
 				setools setools-console mcstrans \
 			pylint \
@@ -206,6 +217,7 @@ function fedora_install() {
 			python3-devel \
 			python3-flake8 \
 			qemu \
+			SDL2-devel SDL2_image-devel \
 			ShellCheck \
 			squashfs-tools \
 			subversion \
@@ -242,27 +254,13 @@ function fedora_install() {
 			texlive-babel-english \
 			texlive-hyphen-english \
 			tmux \
+			udev-browse \
 			unzip \
 			vim \
 			virtme \
 			wget \
 			xmlto \
 			xmltoman \
-			gettext-devel \
-			conntrack-tools \
-			SDL2-devel \
-			SDL2_image-devel \
-			dbus-devel \
-			gstreamer1-devel \
-			gstreamer1-plugins-base-devel \
-			jack-audio-connection-kit-devel \
-			htop  \
-			gtk-doc \
-			gobject-introspection-devel \
-			gpgme-devel \
-			polkit-devel \
-			ostree-devel \
-			udev-browse \
 		--best --verbose
 	fi
 }
