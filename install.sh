@@ -150,6 +150,8 @@ function fedora_install() {
 			alsa-plugins-pulseaudio \
 			bison \
 			blktrace \
+			conmon \
+			containernetworking-cni \
 			cppcheck \
 			ctags \
 			clang \
@@ -157,6 +159,7 @@ function fedora_install() {
 			clang-tools-extra \
 			conntrack-tools \
 			dbus-devel \
+			device-mapper-devel device-mapper-libs \
 			doxygen \
 			elfutils-libelf-devel \
 			ffmpeg \
@@ -166,7 +169,7 @@ function fedora_install() {
 			gdb \
 			gettext-devel \
 			gobject-introspection-devel \
-			golang golint golang-godoc \
+			golang golint golang-godoc go-md2man \
 			gperf \
 			gpgme-devel \
 			gstreamer1-devel gstreamer1-plugins-base-devel \
@@ -179,6 +182,7 @@ function fedora_install() {
 			kernel-headers \
 			kernel-tools \
 			ldns-utils \
+			libassuan-devel \
 			libarchive-devel \
 			libcap-devel \
 			libcgroup libcgroup-pam libcgroup-tools \
@@ -217,6 +221,7 @@ function fedora_install() {
 			python3-devel \
 			python3-flake8 \
 			qemu \
+			runc \
 			SDL2-devel SDL2_image-devel \
 			ShellCheck \
 			squashfs-tools \
