@@ -182,6 +182,7 @@ function fedora_install() {
 			kernel-headers \
 			kernel-tools \
 			ldns-utils \
+			libacl-devel \
 			libassuan-devel \
 			libarchive-devel \
 			libcap-devel \
@@ -202,6 +203,7 @@ function fedora_install() {
 			lxc lxc-templates lxc-extra libvirt debootstrap \
 			make \
 			mutt \
+			ocitools \
 			openldap-clients \
 			openssl-devel \
 			ostree-devel \
