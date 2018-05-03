@@ -10,6 +10,7 @@ Plug 'lzap/vim-selinux'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'fatih/vim-go'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 map <up> <nop>
@@ -80,10 +81,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:quantum_black=1
-let g:quantum_italics=1
+let ayucolor="mirage"
+colorscheme ayu
 set background=dark
-colorscheme quantum
 
 " change the background of all lines that surpasses 80 columns
 highlight OverLength ctermbg=darkred ctermfg=gray
