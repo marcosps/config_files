@@ -65,8 +65,8 @@ function config() {
 	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
 
 	echo "$(whoami):1000:65536" >/tmp/tmp_subids
-	sudo cp /tmp/tmp_subids /etc/subuid
-	sudo cp /tmp/tmp_subids /etc/subgid
+	$SUDO cp /tmp/tmp_subids /etc/subuid
+	$SUDO cp /tmp/tmp_subids /etc/subgid
 	rm /tmp/tmp_subids
 
 	#create signature file
