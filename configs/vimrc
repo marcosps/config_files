@@ -10,7 +10,7 @@ Plug 'lzap/vim-selinux'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'fatih/vim-go'
-Plug 'ayu-theme/ayu-vim'
+Plug 'jdkanani/vim-material-theme'
 call plug#end()
 
 map <up> <nop>
@@ -36,6 +36,11 @@ set spell spelllang=en
 set nobackup
 set noswapfile
 set wildmenu
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+set incsearch
+set lazyredraw " do not redraw when executing macros
+set ffs=unix,dos,mac " use UNIX standard file type
 set path+=**
 set cursorline
 set tabstop=8 shiftwidth=8 softtabstop=0
@@ -46,6 +51,8 @@ set laststatus=2 " airline setup
 set backspace=eol,start,indent " Fix mac osx delete button..
 set encoding=utf-8
 set textwidth=80
+set history=500
+set autoread " reload file when changed from the outside
 set noshowmode " don't show mode in default statusbar
 "TODO: use vi powerline from powerline when it can show file diffs into
 "statusbar
@@ -81,9 +88,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let ayucolor="mirage"
-colorscheme ayu
 set background=dark
+colorscheme material-theme
 
 " change the background of all lines that surpasses 80 columns
 highlight OverLength ctermbg=darkred ctermfg=gray
