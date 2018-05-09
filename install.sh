@@ -30,6 +30,9 @@ if [ -z "$DISTRO" ]; then
 fi
 
 function config() {
+	$SUDO dnf install vim wget curl unzip python gcc redhat-rpm-config \
+		python-devel -y
+
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
 		wget https://github.com/vim/vim/files/657554/pt.utf-8.spl.zip -O /tmp/pt.zip
@@ -65,8 +68,8 @@ function config() {
 	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
 
 	echo "$(whoami):1000:65536" >/tmp/tmp_subids
-	sudo cp /tmp/tmp_subids /etc/subuid
-	sudo cp /tmp/tmp_subids /etc/subgid
+	$SUDO cp /tmp/tmp_subids /etc/subuid
+	$SUDO cp /tmp/tmp_subids /etc/subgid
 	rm /tmp/tmp_subids
 
 	#create signature file
@@ -135,16 +138,6 @@ function fedora_install() {
 	# packages to be installed on a fresh Fedora install
 	if which dnf 2>/dev/null 1>/dev/null
 	then
-		$SUDO dnf install \
-			https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm \
-			https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm \
-			http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm \
-			-y
-
-		$SUDO dnf build-dep bubblewrap bwrap-oci \
-			flatpak \
-			libinput
-
 		$SUDO dnf install \
 			acpitool acpica-tools \
 			alsa-plugins-pulseaudio \
@@ -263,7 +256,6 @@ function fedora_install() {
 			tmux \
 			udev-browse \
 			unzip \
-			vim \
 			virtme \
 			wget \
 			xmlto \
