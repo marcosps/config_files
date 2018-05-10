@@ -155,8 +155,6 @@ function fedora_install() {
 			device-mapper-devel device-mapper-libs \
 			doxygen \
 			elfutils-libelf-devel \
-			ffmpeg \
-			flash-plugin \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
 			gdb \
@@ -186,6 +184,7 @@ function fedora_install() {
 			libnl3-devel \
 			libnetfilter*-devel \
 			libnfnetlink* \
+			libseccomp-devel \
 			libselinux-devel \
 			libsoup-devel \
 			libv4l-devel \
@@ -202,6 +201,7 @@ function fedora_install() {
 			ostree-devel \
 			ncurses-devel \
 			pam-devel \
+			podman \
 			polkit-devel \
 			policycoreutils policycoreutils-gui \
 				policycoreutils-python \
