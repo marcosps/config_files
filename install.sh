@@ -194,6 +194,7 @@ function fedora_install() {
 			luajit-devel \
 			lxc lxc-templates lxc-extra libvirt debootstrap \
 			make \
+			meson \
 			mutt \
 			ocitools \
 			openldap-clients \
@@ -216,7 +217,7 @@ function fedora_install() {
 			python3-devel \
 			python3-flake8 \
 			qemu \
-			rpmdevtools \
+			rpm-build rpmdevtools \
 			runc \
 			SDL2-devel SDL2_image-devel \
 			ShellCheck \
