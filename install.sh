@@ -216,6 +216,7 @@ function fedora_install() {
 			python3-devel \
 			python3-flake8 \
 			qemu \
+			rpmdevtools \
 			runc \
 			SDL2-devel SDL2_image-devel \
 			ShellCheck \
