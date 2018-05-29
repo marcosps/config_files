@@ -30,8 +30,12 @@ if [ -z "$DISTRO" ]; then
 fi
 
 function config() {
-	$SUDO dnf install vim wget curl unzip python gcc redhat-rpm-config \
-		python-devel -y
+	if [ "$DISTRO" = "redhat" ]; then
+		$SUDO dnf install vim wget curl unzip python gcc redhat-rpm-config \
+			python-devel -y
+	else
+		$SUDO apt install curl vim python-pip -y
+	fi
 
 	# install pt spellcheck for vim
 	if [ ! -f /usr/share/vim/vim80/spell/pt.utf-8.spl ]; then
@@ -101,12 +105,16 @@ function debian_install() {
 		apt-transport-https \
 		autoconf \
 		bison \
+		build-essential \
 		ca-certificates \
 		clang \
+		cme \
 		curl \
+		debhelper devscripts dh-make \
 		exuberant-ctags \
 		flatpak \
 		git git-email \
+		golang \
 		ldnsutils \
 		libcap-dev \
 		libevdev-dev \
@@ -118,7 +126,7 @@ function debian_install() {
 		libudev-dev \
 		libtool \
 		libseccomp-dev \
-		lxc \
+		lxc lxd \
 		m4 \
 		mesa-utils \
 		meson \
@@ -127,6 +135,9 @@ function debian_install() {
 		python \
 		python-pip \
 		software-properties-common \
+		sqlite3 \
+		thefuck \
+		tmux \
 		traceroute \
 		uuid-dev \
 		vim \
