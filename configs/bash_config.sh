@@ -9,9 +9,9 @@ if [ ! -d "$GITROOT" ]; then
 	GITROOT=~/gitroot
 fi
 
-export GOPATH=$GITROOT/go
-export GOBIN=$GITROOT/go/bin
-mkdir -p $GITROOT/{go,bin}
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+mkdir -p $GOBIN
 
 #add GOBIN to PATH
 export PATH="$PATH:$GOBIN"
