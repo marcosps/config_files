@@ -102,6 +102,7 @@ function fedora_debug() {
 
 function debian_install() {
 	$SUDO apt install \
+		apt-file \
 		apt-transport-https \
 		autoconf \
 		bison \
@@ -112,6 +113,7 @@ function debian_install() {
 		curl \
 		debhelper devscripts dh-make \
 		exuberant-ctags \
+		ffmpeg \
 		flatpak \
 		git git-email \
 		golang \
@@ -125,11 +127,13 @@ function debian_install() {
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
+		libvirt-bin \
 		libseccomp-dev \
 		lxc lxd \
 		m4 \
 		mesa-utils \
 		meson \
+		mutt \
 		net-tools \
 		pkg-config \
 		python \
@@ -139,6 +143,7 @@ function debian_install() {
 		thefuck \
 		tmux \
 		traceroute \
+		ubuntu-restricted-extras \
 		uuid-dev \
 		vim \
 		zfsutils-linux  \
