@@ -112,11 +112,12 @@ function debian_install() {
 		cme \
 		curl \
 		debhelper devscripts dh-make \
+		debootstrap \
 		exuberant-ctags \
 		ffmpeg \
 		flatpak \
 		git git-email \
-		golang \
+		golang go-dep \
 		ldnsutils \
 		libcap-dev \
 		libevdev-dev \
