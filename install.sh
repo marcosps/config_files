@@ -70,11 +70,14 @@ function config() {
 	mkdir -p ~/.config/powerline/themes/{tmux,vim}
 	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
 	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
+	mkdir -p ~/.config/fish
+	cp configs/config.fish ~/.config/fish/
 
 	echo "$(whoami):1000:65536" >/tmp/tmp_subids
 	$SUDO cp /tmp/tmp_subids /etc/subuid
 	$SUDO cp /tmp/tmp_subids /etc/subgid
 	rm /tmp/tmp_subids
+
 
 	#create signature file
 	echo $'Thanks,\n\tMarcos' >~/.signature
