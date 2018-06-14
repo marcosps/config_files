@@ -114,6 +114,7 @@ function debian_install() {
 		debhelper devscripts dh-make \
 		debootstrap \
 		exuberant-ctags \
+		fish \
 		ffmpeg \
 		flatpak \
 		git git-email \
@@ -128,7 +129,7 @@ function debian_install() {
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
-		libvirt-bin \
+		libvirt-bin python-libvirt \
 		libseccomp-dev \
 		lxc lxd \
 		m4 \
