@@ -50,7 +50,7 @@ function config() {
 	$SUDO mkdir -p /etc/gdbinit.d/
 	$SUDO cp configs/default.gdb /etc/gdbinit.d/
 
-	for i in vimrc gitconfig muttrc tmux.conf
+	for i in vimrc gitconfig muttrc tmux.conf zshrc
 	do
 		cp configs/$i ~/.$i
 	done
@@ -78,6 +78,10 @@ function config() {
 	$SUDO cp /tmp/tmp_subids /etc/subgid
 	rm /tmp/tmp_subids
 
+	# zsh configuration
+	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	curl -L git.io/antigen > $HOME/.antigen.zsh
+	chsh -s /usr/bin/zsh
 
 	#create signature file
 	echo $'Thanks,\n\tMarcos' >~/.signature
@@ -152,6 +156,7 @@ function debian_install() {
 		uuid-dev \
 		vim \
 		zfsutils-linux  \
+		zsh \
 		-y
 }
 
