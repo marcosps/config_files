@@ -20,3 +20,23 @@ antigen theme bullet-train
 
 # Tell Antigen that you're done.
 antigen apply
+
+# remove time from prompt order
+BULLETTRAIN_PROMPT_ORDER=(
+    status
+    custom
+    context
+    dir
+    screen
+    perl
+    ruby
+    virtualenv
+    nvm
+    aws
+    go
+    rust
+    elixir
+    git
+    hg
+    cmd_exec_time
+  )
