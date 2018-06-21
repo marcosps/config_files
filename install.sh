@@ -228,6 +228,7 @@ function fedora_install() {
 			ostree-devel \
 			ncurses-devel \
 			pam-devel \
+			perf \
 			podman \
 			polkit-devel \
 			policycoreutils policycoreutils-gui \
@@ -288,6 +289,7 @@ function fedora_install() {
 			wget \
 			xmlto \
 			xmltoman \
+			zsh \
 		--best --verbose
 	fi
 }
