@@ -136,6 +136,7 @@ function debian_install() {
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
+		libunwind-dev \
 		libvirt-bin libvirt-dev python-libvirt \
 		linux-tools-generic \
 		libseccomp-dev \
@@ -145,6 +146,7 @@ function debian_install() {
 		meson \
 		mutt \
 		net-tools \
+		openssh-server \
 		pkg-config \
 		python \
 		python-pip \
@@ -155,6 +157,7 @@ function debian_install() {
 		traceroute \
 		ubuntu-restricted-extras \
 		uuid-dev \
+		virt-manager \
 		vim \
 		zfsutils-linux  \
 		zsh \
