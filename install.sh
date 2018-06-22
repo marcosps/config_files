@@ -136,7 +136,8 @@ function debian_install() {
 		libpam-cgroup libpam-cgfs \
 		libudev-dev \
 		libtool \
-		libvirt-bin python-libvirt \
+		libvirt-bin libvirt-dev python-libvirt \
+		linux-tools-generic \
 		libseccomp-dev \
 		lxc lxd \
 		m4 \
