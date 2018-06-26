@@ -125,21 +125,25 @@ function debian_install() {
 		ffmpeg \
 		flatpak \
 		git git-email \
+		gnutls-dev \
 		golang go-dep \
 		ldnsutils \
 		libcap-dev \
+		libdevmapper-dev \
 		libevdev-dev \
 		libinput-dev \
 		libncurses5-dev \
 		libnl-3-dev \
 			libnl-cli-3-dev libnl-utils \
 		libpam-cgroup libpam-cgfs \
+		libpciaccess-dev \
 		libudev-dev \
 		libtool \
 		libunwind-dev \
 		libvirt-bin libvirt-dev python-libvirt \
 		linux-tools-generic \
 		libseccomp-dev \
+		libyajl-dev \
 		lxc lxd \
 		m4 \
 		mesa-utils \
@@ -159,6 +163,7 @@ function debian_install() {
 		uuid-dev \
 		virt-manager \
 		vim \
+		xsltproc \
 		zfsutils-linux  \
 		zsh \
 		-y
