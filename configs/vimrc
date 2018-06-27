@@ -11,6 +11,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'fatih/vim-go'
 Plug 'jdkanani/vim-material-theme'
+Plug 'kien/ctrlp.vim'
+Plug 'AndrewRadev/linediff.vim'
 call plug#end()
 
 map <up> <nop>
