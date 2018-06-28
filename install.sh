@@ -129,6 +129,7 @@ function debian_install() {
 		golang go-dep \
 		ldnsutils \
 		libcap-dev \
+		libcurl4-openssl-dev \
 		libdevmapper-dev \
 		libevdev-dev \
 		libinput-dev \
@@ -144,6 +145,7 @@ function debian_install() {
 		linux-tools-generic \
 		libseccomp-dev \
 		libyajl-dev \
+		libxml2-dev \
 		lxc lxd \
 		m4 \
 		mesa-utils \
