@@ -127,6 +127,7 @@ function debian_install() {
 		git git-email \
 		gnutls-dev \
 		golang go-dep \
+		htop \
 		ldnsutils \
 		libcap-dev \
 		libcurl4-openssl-dev \
@@ -160,6 +161,7 @@ function debian_install() {
 		sqlite3 \
 		thefuck \
 		tmux \
+		trace-cmd \
 		traceroute \
 		ubuntu-restricted-extras \
 		uuid-dev \
