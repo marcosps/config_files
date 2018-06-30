@@ -14,29 +14,13 @@ antigen bundle zsh-users/zsh-autosuggestions
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen theme https://github.com/bhilburn/powerlevel9k powerlevel9k
 
 # Load the theme.
-antigen theme bullet-train
+antigen theme powerlevel9k
 
 # Tell Antigen that you're done.
 antigen apply
 
-# remove time from prompt order
-BULLETTRAIN_PROMPT_ORDER=(
-    status
-    custom
-    context
-    dir
-    screen
-    perl
-    ruby
-    virtualenv
-    nvm
-    aws
-    go
-    rust
-    elixir
-    git
-    hg
-    cmd_exec_time
-  )
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user host dir vcs status)
