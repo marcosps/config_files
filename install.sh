@@ -200,6 +200,7 @@ function fedora_install() {
 			gcc \
 			gdb \
 			gettext-devel \
+			gnutls-devel \
 			gobject-introspection-devel \
 			golang golint golang-godoc go-md2man \
 			gperf \
@@ -220,6 +221,7 @@ function fedora_install() {
 			libcap-devel \
 			libcgroup libcgroup-pam libcgroup-tools \
 			libcurl \
+			libevdev-devel \
 			libinput-devel \
 			libmount-devel \
 			libnl3-devel \
@@ -230,6 +232,7 @@ function fedora_install() {
 			libsoup-devel \
 			libv4l-devel \
 			libva-devel \
+			libvirt-devel virt-viewer \
 			libxml2 \
 			llvm-devel llvm-static \
 			luajit-devel \
@@ -260,6 +263,7 @@ function fedora_install() {
 			python3-flake8 \
 			qemu \
 			rpm-build rpmdevtools \
+			rpcgen \
 			runc \
 			SDL2-devel SDL2_image-devel \
 			ShellCheck \
@@ -306,6 +310,8 @@ function fedora_install() {
 			xmltoman \
 			zsh \
 		--best --verbose
+
+		$SUDO dnf builddep libvirt -y
 	fi
 }
 
