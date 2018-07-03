@@ -32,6 +32,7 @@ fi
 function config() {
 	if [ "$DISTRO" = "redhat" ]; then
 		$SUDO dnf install vim wget curl unzip python gcc redhat-rpm-config \
+			powerline-fonts \
 			python-devel -y
 	else
 		$SUDO apt install curl vim python-pip -y
@@ -196,6 +197,7 @@ function fedora_install() {
 			elfutils-libelf-devel \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
+			gcc \
 			gdb \
 			gettext-devel \
 			gobject-introspection-devel \
