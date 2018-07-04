@@ -183,6 +183,7 @@ function fedora_install() {
 			alsa-plugins-pulseaudio \
 			bison \
 			blktrace \
+			coccinelle \
 			conmon \
 			containernetworking-cni \
 			cppcheck \
