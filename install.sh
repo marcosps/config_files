@@ -100,6 +100,7 @@ function debian_install() {
 		ca-certificates \
 		clang \
 		cme \
+		coccinelle \
 		curl \
 		debhelper devscripts dh-make \
 		debootstrap \
