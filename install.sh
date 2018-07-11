@@ -53,31 +53,13 @@ function config() {
 
 	for i in vimrc gitconfig muttrc tmux.conf zshrc
 	do
-		cp configs/$i ~/.$i
+		rm ~/.$i
+		ln -s $PWD/configs/$i ~/.$i
 	done
-
-	mkdir -p ~/.config/lxc
-	cp configs/lxc/default.conf ~/.config/lxc/default.conf
-	$SUDO mkdir -p /etc/lxc
-	$SUDO cp configs/lxc/etc_default.conf /etc/lxc/default.conf
-	if [ "$DISTRO" = "redhat" ]; then
-		$SUDO sh -c 'echo "marcosps veth virbr0 10" > /etc/lxc/lxc-usernet'
-		$SUDO sh -c 'echo "lxc.net.0.link = virbr0" >> /etc/lxc/default.conf'
-	else
-		$SUDO sh -c 'echo "marcosps veth lxcbr0 10" > /etc/lxc/lxc-usernet'
-		$SUDO sh -c 'echo "lxc.net.0.link = lxcbr0" >> /etc/lxc/default.conf'
-	fi
 
 	mkdir -p ~/.config/powerline/themes/{tmux,vim}
 	cp configs/tmux_default.json ~/.config/powerline/themes/tmux/default.json
 	cp configs/vim_default.json ~/.config/powerline/themes/vim/default.json
-	mkdir -p ~/.config/fish
-	cp configs/config.fish ~/.config/fish/
-
-	echo "$(whoami):1000:65536" >/tmp/tmp_subids
-	$SUDO cp /tmp/tmp_subids /etc/subuid
-	$SUDO cp /tmp/tmp_subids /etc/subgid
-	rm /tmp/tmp_subids
 
 	# zsh configuration
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -121,8 +103,8 @@ function debian_install() {
 		curl \
 		debhelper devscripts dh-make \
 		debootstrap \
+		dstat \
 		exuberant-ctags \
-		fish \
 		ffmpeg \
 		flatpak \
 		git git-email \
@@ -195,6 +177,7 @@ function fedora_install() {
 			dbus-devel \
 			device-mapper-devel device-mapper-libs \
 			doxygen \
+			dstat \
 			elfutils-libelf-devel \
 			flatpak flatpak-devel flatpak-builder \
 			fuse-devel \
