@@ -108,6 +108,7 @@ function debian_install() {
 		exuberant-ctags \
 		ffmpeg \
 		flatpak \
+		flex \
 		git git-email \
 		gnutls-dev \
 		golang go-dep \
@@ -232,6 +233,7 @@ function fedora_install() {
 			ncurses-devel \
 			pam-devel \
 			perf \
+			pixman-devel \
 			podman \
 			polkit-devel \
 			policycoreutils policycoreutils-gui \
@@ -290,6 +292,7 @@ function fedora_install() {
 			udev-browse \
 			unzip \
 			virtme \
+			virt-manager \
 			wget \
 			xmlto \
 			xmltoman \
