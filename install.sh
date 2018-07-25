@@ -186,6 +186,7 @@ function fedora_install() {
 			gcc \
 			gdb \
 			gettext-devel \
+			git-email \
 			gnutls-devel \
 			gobject-introspection-devel \
 			golang golint golang-godoc go-md2man \
@@ -202,6 +203,7 @@ function fedora_install() {
 			kernel-tools \
 			ldns-utils \
 			libacl-devel \
+			libaio-devel \
 			libassuan-devel \
 			libarchive-devel \
 			libcap-devel \
@@ -293,7 +295,7 @@ function fedora_install() {
 			unzip \
 			virtme \
 			virt-manager \
-			wget \
+			virt-install \
 			xmlto \
 			xmltoman \
 			zsh \
