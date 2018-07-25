@@ -1,5 +1,7 @@
 source $HOME/.antigen.zsh
 
+bindkey "\033[1~" beginning-of-line
+bindkey "\033[4~" end-of-line
 export TERM="xterm-256color"
 
 # Load the oh-my-zsh's library.
@@ -11,6 +13,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle thefuck
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.

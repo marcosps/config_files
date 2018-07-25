@@ -27,6 +27,8 @@ imap jk <Esc>
 nmap // <leader>ci
 vmap // <leader>ci
 
+nmap <silent> ./ :nohlsearch<CR>
+
 syntax enable
 filetype plugin on
 filetype indent on
