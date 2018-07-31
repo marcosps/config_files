@@ -290,9 +290,11 @@ function fedora_install() {
 			texlive-langsci \
 			texlive-babel-english \
 			texlive-hyphen-english \
+			thefuck \
 			tmux \
 			udev-browse \
 			unzip \
+			valgrind \
 			virtme \
 			virt-manager \
 			virt-install \
