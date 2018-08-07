@@ -296,8 +296,9 @@ function fedora_install() {
 			unzip \
 			valgrind \
 			virtme \
-			virt-manager \
 			virt-install \
+			virt-manager \
+			virt-top \
 			xmlto \
 			xmltoman \
 			zsh \
