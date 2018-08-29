@@ -55,6 +55,9 @@ function config() {
 	$SUDO mkdir -p /etc/gdbinit.d/
 	$SUDO cp configs/default.gdb /etc/gdbinit.d/
 
+	# add sysctl file
+	$SUDO cp configs/kernel.conf /etc/sysctl.d/
+
 	for i in vimrc gitconfig muttrc tmux.conf zshrc
 	do
 		rm ~/.$i
