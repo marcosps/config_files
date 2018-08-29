@@ -1,13 +1,17 @@
 #!/bin/bash
 
-SUDO=$(which sudo 2>/dev/null)
+SUDO=/usr/bin/sudo
 # don't execute where it doesn't have (running from a container)
-if [ -z "$SUDO" ] ; then
+if [ ! -f $SUDO ] ; then
 	SUDO=""
 fi
 
+if [ -f /usr/bin/dnf ]; then
+	$SUDO dnf install which -y
+fi
+
 DISTRO=""
-ITEMS=( apt dnf )
+ITEMS=( apt /usr/bin/dnf )
 for i in "${ITEMS[@]}"
 do
 	CHECK="$(which "$i" 2>/dev/null)"
@@ -16,7 +20,7 @@ do
 		apt)
 			DISTRO="debian"
 			;;
-		dnf)
+		*dnf)
 			DISTRO="redhat"
 			;;
 		esac
@@ -294,6 +298,7 @@ function fedora_install() {
 			tmux \
 			udev-browse \
 			unzip \
+			util-linux-user \
 			valgrind \
 			virtme \
 			virt-install \

@@ -15,3 +15,5 @@
 	mergestyle = diff3
 [mergetools]
 	prompt = false
+[diff]
+	renames = true
