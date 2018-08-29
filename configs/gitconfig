@@ -8,7 +8,6 @@
 	smtpuser = marcos.souza.org@gmail.com
 	smtpencryption = tls
 	smtpserverport = 587
-	cccmd = ./scripts/get_maintainer.pl -i
 [push]
 	default = simple
 [merge]
