@@ -1,11 +1,12 @@
 ---
 - name: configure developer environment
   hosts: localhost
-  remote_user: marcosps
   become: yes
   connection: local
   vars:
     home: "{{ lookup('env','HOME') }}"
+    user: "{{ lookup('env','USER') }}"
+  remote_user: '{{ user }}'
 
   tasks:
   - name: install packages
@@ -53,8 +54,8 @@
     file:
       state: directory
       path: '{{ home }}/{{ item }}'
-      owner: marcosps
-      group: marcosps
+      owner: '{{ user }}'
+      group: '{{ user }}'
     with_items:
       - git
       - .vim
@@ -71,8 +72,8 @@
       src: '{{ home }}/git/config_files/configs/{{ item.src }}'
       dest: '{{ home }}/{{ item.dest }}'
       state: link
-      owner: marcosps
-      group: marcosps
+      owner: '{{ user }}'
+      group: '{{ user }}'
     with_items:
       - { src: 'gitconfig', dest: '.gitconfig' }
       - { src: 'muttrc', dest: '.muttrc' }
