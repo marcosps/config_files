@@ -11,6 +11,7 @@
   tasks:
   - name: install packages
     dnf: pkg={{item}} state=latest
+    when: ansible_distribution == "Fedora"
     with_items:
     - autoconf
     - automake
@@ -44,6 +45,7 @@
 
   - name: install pip modules
     pip: name={{ item }}
+    when: ansible_distribution == "Fedora"
     with_items:
       - powerline-status
       - netifaces
