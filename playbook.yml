@@ -1,0 +1,32 @@
+---
+- name: configure developer environment
+  hosts: localhost
+  remote_user: marcosps
+  become: yes
+
+  tasks:
+  - name: install packages
+    dnf: pkg={{item}} state=present
+    with_items:
+    - clang-analyzer
+    - clang-tools-extra
+    - ctags
+    - coccinelle
+    - flatpak
+    - git
+    - git-email
+    - gcc
+    - gdb
+    - golang
+    - htop
+    - make
+    - meson
+    - mutt
+    - python-devel
+    - qemu
+    - tmux
+    - valgrind
+    - vim
+    - virt-manager
+    - zsh
+
