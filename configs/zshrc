@@ -4,6 +4,8 @@ bindkey "\033[1~" beginning-of-line
 bindkey "\033[4~" end-of-line
 export TERM="xterm-256color"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
