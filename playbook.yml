@@ -6,8 +6,10 @@
 
   tasks:
   - name: install packages
-    dnf: pkg={{item}} state=present
+    dnf: pkg={{item}} state=latest
     with_items:
+    - autoconf
+    - automake
     - clang-analyzer
     - clang-tools-extra
     - ctags
@@ -22,6 +24,7 @@
     - make
     - meson
     - mutt
+    - podman
     - python-devel
     - python-pip
     - qemu
