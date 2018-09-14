@@ -51,9 +51,10 @@
     - python-devel
     - python-pip
     - qemu
+    - rpmdevtools
+    - strace
     - strace
     - tmux
-    - strace
     - unzip
     - valgrind
     - vim
