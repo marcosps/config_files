@@ -23,6 +23,7 @@
     - meson
     - mutt
     - python-devel
+    - python-pip
     - qemu
     - tmux
     - valgrind
@@ -30,3 +31,10 @@
     - virt-manager
     - zsh
 
+  - name: install pip modules
+    pip: name={{ item }}
+    with_items:
+      - powerline-status
+      - netifaces
+      - thefuck
+      - ipython
