@@ -17,6 +17,7 @@
     - clang-tools-extra
     - ctags
     - coccinelle
+    - curl
     - flatpak
     - git
     - git-email
@@ -56,6 +57,7 @@
       group: marcosps
     with_items:
       - git
+      - .vim
       - .config/powerline/themes/tmux
       - .config/powerline/themes/vim
 
@@ -75,7 +77,7 @@
       - { src: 'gitconfig', dest: '.gitconfig' }
       - { src: 'muttrc', dest: '.muttrc' }
       - { src: 'tmux.conf', dest: '.tmux.conf' }
-      - { src: 'vimrc', dest: '.vimrc' }
+      - { src: 'vimrc', dest: '.vim/vimrc' }
       - { src: 'zshrc', dest: '.zshrc' }
       - { src: 'tmux_default.json', dest: '.config/powerline/themes/tmux/default.json' }
       - { src: 'vim_default.json', dest: '.config/powerline/themes/vim/default.json' }
