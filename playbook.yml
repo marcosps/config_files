@@ -4,6 +4,8 @@
   remote_user: marcosps
   become: yes
   connection: local
+  vars:
+    home: "{{ lookup('env','HOME') }}"
 
   tasks:
   - name: install packages
@@ -45,3 +47,35 @@
       - netifaces
       - thefuck
       - ipython
+
+  - name: create home git directory
+    file:
+      state: directory
+      path: '{{ home }}/{{ item }}'
+      owner: marcosps
+      group: marcosps
+    with_items:
+      - git
+      - .config/powerline/themes/tmux
+      - .config/powerline/themes/vim
+
+  - name: clone config_files repository
+    git:
+      repo: 'https://github.com/marcosps/config_files'
+      dest: '{{ home }}/git/config_files'
+
+  - name: install config_file files
+    file:
+      src: '{{ home }}/git/config_files/configs/{{ item.src }}'
+      dest: '{{ home }}/{{ item.dest }}'
+      state: link
+      owner: marcosps
+      group: marcosps
+    with_items:
+      - { src: 'gitconfig', dest: '.gitconfig' }
+      - { src: 'muttrc', dest: '.muttrc' }
+      - { src: 'tmux.conf', dest: '.tmux.conf' }
+      - { src: 'vimrc', dest: '.vimrc' }
+      - { src: 'zshrc', dest: '.zshrc' }
+      - { src: 'tmux_default.json', dest: '.config/powerline/themes/tmux/default.json' }
+      - { src: 'vim_default.json', dest: '.config/powerline/themes/vim/default.json' }
