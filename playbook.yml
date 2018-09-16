@@ -3,6 +3,7 @@
   hosts: localhost
   remote_user: marcosps
   become: yes
+  connection: local
 
   tasks:
   - name: install packages
@@ -21,14 +22,17 @@
     - gdb
     - golang
     - htop
+    - libvirt-devel
     - make
     - meson
     - mutt
+    - ncurses-devel
     - podman
     - python-devel
     - python-pip
     - qemu
     - tmux
+    - strace
     - valgrind
     - vim
     - virt-manager
