@@ -9,7 +9,18 @@
   remote_user: '{{ user }}'
 
   tasks:
-  - name: install packages/repo
+  - name: install rpmfusion
+    dnf: pkg={{ item }} state=present
+    when: ansible_distribution == "Fedora"
+    with_items:
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_version }}.noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_version }}.noarch.rpm
+
+  - name: update dnf
+    dnf: pkg=* state=latest
+    when: ansible_distribution == "Fedora"
+
+  - name: install packages
     dnf: pkg={{item}} state=latest
     when: ansible_distribution == "Fedora"
     with_items:
@@ -43,8 +54,6 @@
     - vim
     - virt-manager
     - zsh
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
-    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
 
   - name: install pip modules
     pip: name={{ item }}
@@ -77,6 +86,7 @@
       src: '{{ home }}/git/config_files/configs/{{ item.src }}'
       dest: '{{ home }}/{{ item.dest }}'
       state: link
+      force: yes
       owner: '{{ user }}'
       group: '{{ user }}'
     with_items:
