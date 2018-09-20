@@ -31,7 +31,9 @@
     - ctags
     - coccinelle
     - curl
+    - exfat-utils
     - flatpak
+    - fuse-exfat
     - git
     - git-email
     - gcc
