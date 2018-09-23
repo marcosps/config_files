@@ -6,6 +6,7 @@
   vars:
     home: "{{ lookup('env','HOME') }}"
     user: "{{ lookup('env','USER') }}"
+    githome: "{{ home }}/git/config_files"
   remote_user: '{{ user }}'
 
   tasks:
@@ -46,15 +47,18 @@
     - mutt
     - ncurses-devel
     - podman
+    - powerline-fonts
     - python-devel
     - python-pip
     - qemu
     - strace
     - tmux
     - strace
+    - unzip
     - valgrind
     - vim
     - virt-manager
+    - wget
     - zsh
 
   - name: install pip modules
@@ -66,6 +70,18 @@
       - thefuck
       - ipython
 
+  - name: download oh-my-zsh
+    get_url:
+      owner: '{{ user }}'
+      group: '{{ user }}'
+      mode: 0550
+      url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+      dest: '/tmp/zsh.sh'
+
+  - name: install oh-my-zsh
+    sudo: no
+    shell: /tmp/zsh.sh
+
   - name: create home git directory
     file:
       state: directory
@@ -74,18 +90,18 @@
       group: '{{ user }}'
     with_items:
       - git
-      - .vim
+      - .vim/autoload
       - .config/powerline/themes/tmux
       - .config/powerline/themes/vim
 
   - name: clone config_files repository
     git:
       repo: 'https://github.com/marcosps/config_files'
-      dest: '{{ home }}/git/config_files'
+      dest: '{{ githome }}'
 
   - name: install config_file files
     file:
-      src: '{{ home }}/git/config_files/configs/{{ item.src }}'
+      src: '{{ githome }}/configs/{{ item.src }}'
       dest: '{{ home }}/{{ item.dest }}'
       state: link
       force: yes
@@ -99,3 +115,44 @@
       - { src: 'zshrc', dest: '.zshrc' }
       - { src: 'tmux_default.json', dest: '.config/powerline/themes/tmux/default.json' }
       - { src: 'vim_default.json', dest: '.config/powerline/themes/vim/default.json' }
+
+  - name: create etc directories
+    file:
+      state: directory
+      path: '/etc/{{ item }}'
+      force: yes
+    with_items:
+      - sysctl.d
+      - gdbinit.d
+
+  - name: copy etc files
+    copy:
+      src: '{{ githome }}/configs/{{ item.src }}'
+      dest: '/etc/{{ item.dest }}'
+      force: yes
+    with_items:
+      - { src: 'kernel.conf', dest: 'sysctl.d/kernel.conf' }
+      - { src: 'default.gdb', dest: 'gdbinit.d/default.gdb' }
+
+  - name: download vimplug
+    get_url:
+      owner: '{{ user }}'
+      group: '{{ user }}'
+      url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      dest: '{{ home }}/.vim/autoload/plug.vim'
+
+  - name: download antigen
+    get_url:
+      owner: '{{ user }}'
+      group: '{{ user }}'
+      url: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
+      dest: '{{ home }}/.antigen.zsh'
+
+  - name: create .signature files (for mutt)
+    copy:
+      dest: '{{ home }}/.signature'
+      owner: '{{ user }}'
+      group: '{{ user }}'
+      content: |
+        Thanks,
+        Marcos
