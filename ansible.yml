@@ -33,6 +33,7 @@
     - coccinelle
     - curl
     - exfat-utils
+    - ffmpeg
     - flatpak
     - fuse-exfat
     - git
@@ -59,6 +60,7 @@
     - valgrind
     - vim
     - virt-manager
+    - youtube-dl
     - wget
     - zsh
 
