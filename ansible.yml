@@ -10,6 +10,45 @@
   remote_user: '{{ user }}'
 
   tasks:
+  - name: install zypper packages
+    zypper: name={{item}} state=latest
+    when: ansible_distribution == "openSUSE Leap"
+    with_items:
+    - autoconf
+    - automake
+    - ctags
+    - coccinelle
+    - curl
+    - exfat-utils
+    - flatpak
+    - fuse-exfat
+    - git
+    - git-email
+    - gcc
+    - gdb
+    - htop
+    - libvirt-devel
+    - make
+    - meson
+    - mutt
+    - ncurses-devel
+    - powerline-fonts
+    - python-devel
+    - python3-devel
+    - python-pip
+    - qemu
+    - rpmdevtools
+    - strace
+    - strace
+    - tmux
+    - unzip
+    - valgrind
+    - vim
+    - virt-manager
+    - youtube-dl
+    - wget
+    - zsh
+
   - name: install rpmfusion
     dnf: pkg={{ item }} state=present
     when: ansible_distribution == "Fedora"
@@ -21,7 +60,7 @@
     dnf: pkg=* state=latest
     when: ansible_distribution == "Fedora"
 
-  - name: install packages
+  - name: install dnf packages
     dnf: pkg={{item}} state=latest
     when: ansible_distribution == "Fedora"
     with_items:
@@ -66,7 +105,6 @@
 
   - name: install pip modules
     pip: name={{ item }}
-    when: ansible_distribution == "Fedora"
     with_items:
       - powerline-status
       - netifaces
@@ -76,7 +114,6 @@
   - name: download oh-my-zsh
     get_url:
       owner: '{{ user }}'
-      group: '{{ user }}'
       mode: 0550
       url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
       dest: '/tmp/zsh.sh'
@@ -90,7 +127,6 @@
       state: directory
       path: '{{ home }}/{{ item }}'
       owner: '{{ user }}'
-      group: '{{ user }}'
     with_items:
       - git
       - .vim/autoload
@@ -101,6 +137,7 @@
     git:
       repo: 'https://github.com/marcosps/config_files'
       dest: '{{ githome }}'
+    become: no
 
   - name: install config_file files
     file:
@@ -109,7 +146,6 @@
       state: link
       force: yes
       owner: '{{ user }}'
-      group: '{{ user }}'
     with_items:
       - { src: 'gitconfig', dest: '.gitconfig' }
       - { src: 'muttrc', dest: '.muttrc' }
@@ -140,14 +176,12 @@
   - name: download vimplug
     get_url:
       owner: '{{ user }}'
-      group: '{{ user }}'
       url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       dest: '{{ home }}/.vim/autoload/plug.vim'
 
   - name: download antigen
     get_url:
       owner: '{{ user }}'
-      group: '{{ user }}'
       url: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
       dest: '{{ home }}/.antigen.zsh'
 
@@ -155,7 +189,6 @@
     copy:
       dest: '{{ home }}/.signature'
       owner: '{{ user }}'
-      group: '{{ user }}'
       content: |
         Thanks,
         Marcos
