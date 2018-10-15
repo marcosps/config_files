@@ -8,12 +8,11 @@ Plug 'vim-utils/vim-man'
 Plug 'stfl/meson.vim'
 Plug 'lzap/vim-selinux'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'fatih/vim-go'
-Plug 'jdkanani/vim-material-theme'
 Plug 'kien/ctrlp.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
 map <up> <nop>
@@ -80,7 +79,7 @@ let c_fold_enabled=1
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme='quantum'
+let g:airline_theme = "github"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#flags = 'f'
 
@@ -94,8 +93,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:github_colors_soft = 1
 set background=dark
-colorscheme material-theme
+colorscheme github
 
 " change the background of all lines that surpasses 80 columns
 highlight OverLength ctermbg=darkred ctermfg=gray
