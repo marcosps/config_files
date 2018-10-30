@@ -10,6 +10,10 @@
   remote_user: '{{ user }}'
 
   tasks:
+  - hostname:
+      name={{ custom_hostname }}
+    when: custom_hostname is defined and ansible_distribution == "Fedora"
+
   - name: install zypper packages
     zypper: name={{item}} state=latest
     when: ansible_distribution == "openSUSE Leap"
@@ -110,6 +114,7 @@
       - netifaces
       - thefuck
       - ipython
+    become: no
 
   - name: download oh-my-zsh
     get_url:
