@@ -14,12 +14,24 @@
       name={{ custom_hostname }}
     when: custom_hostname is defined and ansible_distribution == "Fedora"
 
+  - name: install salt-master (if master)
+    zypper: name=salt-master state=latest
+    when: ceph_master is defined and ansible_distribution == "openSUSE Leap"
+
+  - name: enable salt-master (if master)
+    systemd:
+      name: salt-master
+      enabled: yes
+      state: started
+    when: ceph_master is defined and ansible_distribution == "openSUSE Leap"
+
   - name: install zypper packages
     zypper: name={{item}} state=latest
     when: ansible_distribution == "openSUSE Leap"
     with_items:
     - autoconf
     - automake
+    - ceph
     - ctags
     - coccinelle
     - curl
@@ -42,7 +54,7 @@
     - python-pip
     - qemu
     - rpmdevtools
-    - strace
+    - salt-minion
     - strace
     - tmux
     - unzip
@@ -52,6 +64,13 @@
     - youtube-dl
     - wget
     - zsh
+
+  - name: start salt-minion
+    systemd:
+      name: salt-minion
+      enabled: yes
+      state: started
+    when: ansible_distribution == "openSUSE Leap"
 
   - name: install rpmfusion
     dnf: pkg={{ item }} state=present
