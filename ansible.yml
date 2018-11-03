@@ -92,6 +92,7 @@
     with_items:
     - autoconf
     - automake
+    - ceph-osd
     - clang-analyzer
     - clang-tools-extra
     - ctags
