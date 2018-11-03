@@ -31,33 +31,54 @@
     with_items:
     - autoconf
     - automake
+    - babeltrace-devel
     - ceph
     - cmake
     - ctags
+    - cunit-devel
     - coccinelle
     - curl
     - exfat-utils
     - flatpak
+    - fuse-devel
     - fuse-exfat
     - git
     - git-email
     - gcc
     - gcc-c++
     - gdb
+    - gperf
     - htop
+    - jemalloc-devel
+    - keyutils-devel
+    - leveldb-devel
+    - libaio-devel
+    - libblkid-devel
+    - libcurl-devel
+    - libexpat-devel
+    - liblz4-devel
+    - liboath-devel
+    - libopenssl-devel
+    - libudev-devel
     - libvirt-devel
+    - lttng-ust-devel
     - make
     - meson
+    - mozilla-nss-devel
     - mutt
     - ncurses-devel
+    - openldap2-devel
     - powerline-fonts
     - python-devel
     - python-pip
     - python-sphinx
+    - python2-Cython
     - python3-devel
     - qemu
+    - rdma-core-devel
     - rpmdevtools
     - salt-minion
+    - snappy-devel
     - strace
     - tmux
     - unzip
@@ -95,6 +116,7 @@
     - ceph-osd
     - clang-analyzer
     - clang-tools-extra
+    - cmake
     - ctags
     - coccinelle
     - curl
