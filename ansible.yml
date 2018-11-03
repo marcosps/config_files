@@ -32,6 +32,7 @@
     - autoconf
     - automake
     - ceph
+    - cmake
     - ctags
     - coccinelle
     - curl
@@ -41,6 +42,7 @@
     - git
     - git-email
     - gcc
+    - gcc-c++
     - gdb
     - htop
     - libvirt-devel
@@ -50,8 +52,9 @@
     - ncurses-devel
     - powerline-fonts
     - python-devel
-    - python3-devel
     - python-pip
+    - python-sphinx
+    - python3-devel
     - qemu
     - rpmdevtools
     - salt-minion
