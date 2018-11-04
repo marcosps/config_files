@@ -59,8 +59,11 @@
     - liblz4-devel
     - liboath-devel
     - libopenssl-devel
+    - librados-devel
+    - libradosstriper-devel
     - libudev-devel
     - libvirt-devel
+    - ltrace
     - lttng-ust-devel
     - make
     - meson
@@ -73,6 +76,7 @@
     - python-pip
     - python-sphinx
     - python2-Cython
+    - python2-numpy-devel
     - python3-devel
     - qemu
     - rdma-core-devel
@@ -130,6 +134,8 @@
     - gdb
     - golang
     - htop
+    - librados-devel
+    - libradosstriper-devel
     - libvirt-devel
     - make
     - meson
