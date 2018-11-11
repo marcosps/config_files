@@ -17,3 +17,5 @@
 	prompt = false
 [diff]
 	renames = true
+[remote "origin"]
+	prune = true
