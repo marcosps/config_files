@@ -13,6 +13,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'krisajenkins/vim-projectlocal'
 call plug#end()
 
 map <up> <nop>
@@ -100,6 +101,3 @@ colorscheme github
 " change the background of all lines that surpasses 80 columns
 highlight OverLength ctermbg=darkred ctermfg=gray
 match OverLength /\%>80v.\+/
-
-" autocommands
-autocmd FileType python setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=0
