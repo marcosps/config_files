@@ -66,6 +66,7 @@
     - ltrace
     - lttng-ust-devel
     - make
+    - man-pages
     - meson
     - mozilla-nss-devel
     - mutt
