@@ -19,3 +19,6 @@
 	renames = true
 [remote "origin"]
 	prune = true
+
+[includeIf "gitdir:~/git/suse/"]
+	path = ~/.gitconfig.prof

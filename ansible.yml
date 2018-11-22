@@ -205,6 +205,7 @@
       owner: '{{ user }}'
     with_items:
       - { src: 'gitconfig', dest: '.gitconfig' }
+      - { src: 'gitconfig.prof', dest: '.gitconfig.prof' }
       - { src: 'muttrc', dest: '.muttrc' }
       - { src: 'tmux.conf', dest: '.tmux.conf' }
       - { src: 'vimrc', dest: '.vim/vimrc' }
