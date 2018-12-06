@@ -85,6 +85,7 @@
     - salt-minion
     - snappy-devel
     - strace
+    - sysstat
     - tmux
     - unzip
     - valgrind
