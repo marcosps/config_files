@@ -97,7 +97,3 @@ let g:syntastic_check_on_wq = 0
 let g:github_colors_soft = 1
 set background=dark
 colorscheme github
-
-" change the background of all lines that surpasses 80 columns
-highlight OverLength ctermbg=darkred ctermfg=gray
-match OverLength /\%>80v.\+/
