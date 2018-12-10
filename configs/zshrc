@@ -5,8 +5,10 @@ bindkey "\033[4~" end-of-line
 
 export TERM="xterm-256color"
 export EDITOR=vim
-alias ls="/bin/ls --color"
 
+# aliases
+alias ls="/bin/ls --color"
+alias weg='egrep -i "warn|err"'
 
 export PATH="$HOME/.local/bin:$PATH"
 
