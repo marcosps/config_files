@@ -14,17 +14,6 @@
       name={{ custom_hostname }}
     when: custom_hostname is defined and ansible_distribution == "Fedora"
 
-  - name: install salt-master (if master)
-    zypper: name=salt-master state=latest
-    when: ceph_master is defined and ansible_distribution == "openSUSE Leap"
-
-  - name: enable salt-master (if master)
-    systemd:
-      name: salt-master
-      enabled: yes
-      state: started
-    when: ceph_master is defined and ansible_distribution == "openSUSE Leap"
-
   - name: install zypper packages
     zypper: name={{item}} state=latest
     when: ansible_distribution == "openSUSE Leap"
@@ -38,6 +27,7 @@
     - cunit-devel
     - coccinelle
     - curl
+    - dhcp-tools
     - exfat-utils
     - flatpak
     - fuse-devel
@@ -49,6 +39,7 @@
     - gdb
     - gperf
     - htop
+    - iotop
     - jemalloc-devel
     - keyutils-devel
     - leveldb-devel
@@ -80,27 +71,22 @@
     - python2-numpy-devel
     - python3-devel
     - qemu
+    - quilt
     - rdma-core-devel
     - rpmdevtools
-    - salt-minion
     - snappy-devel
     - strace
     - sysstat
+    - tcpdump
     - tmux
     - unzip
     - valgrind
     - vim
     - virt-manager
+    - virt-viewer
     - youtube-dl
     - wget
     - zsh
-
-  - name: start salt-minion
-    systemd:
-      name: salt-minion
-      enabled: yes
-      state: started
-    when: ansible_distribution == "openSUSE Leap"
 
   - name: install rpmfusion
     dnf: pkg={{ item }} state=present
@@ -163,6 +149,7 @@
   - name: install pip modules
     pip: name={{ item }}
     with_items:
+      - distro
       - powerline-status
       - netifaces
       - thefuck
