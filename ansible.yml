@@ -42,6 +42,7 @@
     - iotop
     - jemalloc-devel
     - keyutils-devel
+    - krb5-devel
     - leveldb-devel
     - libaio-devel
     - libblkid-devel
@@ -69,6 +70,7 @@
     - python-sphinx
     - python2-Cython
     - python2-numpy-devel
+    - python3-Cython
     - python3-devel
     - qemu
     - quilt
