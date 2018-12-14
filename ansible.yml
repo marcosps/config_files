@@ -25,6 +25,7 @@
     - cmake
     - ctags
     - cunit-devel
+    - crash
     - coccinelle
     - curl
     - dhcp-tools
