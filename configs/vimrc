@@ -16,6 +16,7 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'krisajenkins/vim-projectlocal'
 call plug#end()
 
+" disable arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -28,6 +29,11 @@ imap jk <Esc>
 nmap // <leader>ci
 vmap // <leader>ci
 
+" "easify" tab keys
+nmap tn :tabnext<CR>
+nmap tp :tabprev<CR>
+
+" hide hightlight from last search
 nmap <silent> ./ :nohlsearch<CR>
 
 syntax enable
