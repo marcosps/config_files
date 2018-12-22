@@ -1,0 +1,5 @@
+[sendemail]
+	to = linux-kernel@vger.kernel.org
+	cccmd = ./scripts/get_maintainer.pl
+[oh-my-zsh]
+        hide-status = 1

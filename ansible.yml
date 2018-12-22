@@ -43,6 +43,7 @@
     - htop
     - iotop
     - jemalloc-devel
+    - kernel-source
     - keyutils-devel
     - krb5-devel
     - leveldb-devel
