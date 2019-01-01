@@ -5,6 +5,7 @@ bindkey "\033[4~" end-of-line
 
 export TERM="xterm-256color"
 export EDITOR=vim
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
 # aliases
 alias ls="/bin/ls --color"
