@@ -64,7 +64,9 @@
     - man-pages
     - meson
     - mozilla-nss-devel
+    - mtr
     - mutt
+    - nvme-cli
     - ncurses-devel
     - openldap2-devel
     - pciutils
