@@ -15,6 +15,7 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'pearofducks/ansible-vim'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'krisajenkins/vim-projectlocal'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " disable arrow keys
@@ -36,6 +37,9 @@ nmap tp :tabprev<CR>
 
 " hide hightlight from last search
 nmap <silent> ./ :nohlsearch<CR>
+
+" hide/show tagbar
+nmap <F8> :TagbarToggle<CR>
 
 syntax enable
 filetype plugin on
