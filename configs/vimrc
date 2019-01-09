@@ -94,6 +94,9 @@ let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
 let g:airline_theme = "github"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#flags = 'f'
+" this algorithm works well for /** */ style comments in a tab-indented file
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let b:airline_whitespace_checks = [ 'trailing', 'long' ]
 
 " settings of syntastic
 set statusline+=%#warningmsg#
