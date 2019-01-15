@@ -13,9 +13,9 @@ Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'pearofducks/ansible-vim'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'krisajenkins/vim-projectlocal'
 Plug 'majutsushi/tagbar'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " disable arrow keys
@@ -91,7 +91,7 @@ let c_fold_enabled=1
 
 " Plugins setup
 let g:signify_vcs_list = [ 'git', 'hg', 'svn' ]
-let g:airline_theme = "github"
+let g:airline_theme = "gruvbox"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tagbar#flags = 'f'
 " this algorithm works well for /** */ style comments in a tab-indented file
@@ -110,4 +110,4 @@ let g:syntastic_check_on_wq = 0
 
 let g:github_colors_soft = 1
 set background=dark
-colorscheme github
+colorscheme gruvbox
