@@ -4,6 +4,9 @@ set folder="imaps://imap.gmail.com/"
 set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
 set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+mailboxes = INBOX INBOX/SUSE INBOX/linux-block
+set sidebar_visible = yes
+set sidebar_short_path
 
 set smtp_url="smtp://marcos.souza.org@smtp.gmail.com:587/"
 set ssl_force_tls=yes
