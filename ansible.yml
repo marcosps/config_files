@@ -59,6 +59,7 @@
     - libradosstriper-devel
     - libudev-devel
     - libvirt-devel
+    - linuxconsoletools
     - ltrace
     - lttng-ust-devel
     - make
