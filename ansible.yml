@@ -21,6 +21,7 @@
     - autoconf
     - automake
     - babeltrace-devel
+    - bcc-tools
     - ceph
     - clang
     - cmake
