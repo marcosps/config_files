@@ -13,6 +13,8 @@ alias weg='egrep -i "warn|err"'
 
 export PATH="$HOME/.local/bin:$PATH"
 
+unsetopt BEEP
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
