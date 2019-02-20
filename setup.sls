@@ -74,6 +74,7 @@ setup:
       - snappy-devel
       - strace
       - sysstat
+      - taskwarrior
       - tcpdump
       - texlive-xetex
       - tmux
