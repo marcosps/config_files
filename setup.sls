@@ -88,10 +88,10 @@ setup:
       - zsh
 
   pip.installed:
-    - bin_env: '/bin/pip3'
     - pkgs:
       - distro
-      - powerline-status
-      - netifaces
-      - thefuck
       - ipython
+      - netifaces
+      - powerline-status
+      - thefuck
+      - virtme
