@@ -28,6 +28,7 @@ setup:
       - gcc-c++
       - gdb
       - gperf
+      - hexchat
       - htop
       - iotop
       - jemalloc-devel
