@@ -48,6 +48,7 @@ setup:
       - libradosstriper-devel
       - libudev-devel
       - libvirt-devel
+      - libSDL-devel
       - linuxconsoletools
       - ltrace
       - lttng-ust-devel
@@ -68,6 +69,8 @@ setup:
       - python3-devel
       - python3-pip
       - qemu
+      - qemu-kvm
+      - qemu-x86
       - quilt
       - rdma-core-devel
       - rpmdevtools
@@ -79,6 +82,7 @@ setup:
       - texlive-xetex
       - tmux
       - unzip
+      - util-linux
       - valgrind
       - vim
       - virt-manager
