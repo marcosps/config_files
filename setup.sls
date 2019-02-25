@@ -16,6 +16,7 @@ setup:
       - coccinelle
       - curl
       - dhcp-tools
+      - efivar
       - exfat-utils
       - fio
       - flatpak
@@ -47,6 +48,8 @@ setup:
       - librados-devel
       - libradosstriper-devel
       - libudev-devel
+      - libvirt-daemon
+      - libvirt-daemon-qemu
       - libvirt-devel
       - libSDL-devel
       - linuxconsoletools
@@ -70,6 +73,7 @@ setup:
       - python3-pip
       - qemu
       - qemu-kvm
+      - qemu-ovmf-x86_64
       - qemu-x86
       - quilt
       - rdma-core-devel
