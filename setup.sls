@@ -23,6 +23,7 @@ setup:
       - flex
       - fuse-devel
       - fuse-exfat
+      - gettext-tools
       - git
       - git-email
       - gcc
@@ -47,6 +48,7 @@ setup:
       - libopenssl-devel
       - librados-devel
       - libradosstriper-devel
+      - libtool
       - libudev-devel
       - libvirt-daemon
       - libvirt-daemon-qemu
