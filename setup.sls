@@ -9,6 +9,7 @@ setup:
       - bcc-tools
       - bison
       - bridge-utils
+      - blktrace
       - clang
       - cmake
       - cscope
@@ -82,6 +83,7 @@ setup:
       - qemu-x86
       - quilt
       - rdma-core-devel
+      - rpm-build
       - rpmdevtools
       - snappy-devel
       - strace
@@ -97,6 +99,7 @@ setup:
       - virt-manager
       - virt-viewer
       - youtube-dl
+      - wdiff
       - wget
       - zsh
 
