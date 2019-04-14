@@ -10,34 +10,6 @@
   remote_user: '{{ user }}'
 
   tasks:
-  - name: download oh-my-zsh
-    get_url:
-      owner: '{{ user }}'
-      mode: 0550
-      url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-      dest: '/tmp/zsh.sh'
-
-  - name: install oh-my-zsh
-    sudo: no
-    shell: /tmp/zsh.sh
-
-  - name: create home git directory
-    file:
-      state: directory
-      path: '{{ home }}/{{ item }}'
-      owner: '{{ user }}'
-    with_items:
-      - git
-      - .vim/autoload
-      - .config/powerline/themes/tmux
-      - .config/powerline/themes/vim
-
-  - name: clone config_files repository
-    git:
-      repo: 'https://github.com/marcosps/config_files'
-      dest: '{{ githome }}'
-    become: no
-
   - name: install config_file files
     file:
       src: '{{ githome }}/configs/{{ item.src }}'
@@ -72,23 +44,3 @@
     with_items:
       - { src: 'kernel.conf', dest: 'sysctl.d/kernel.conf' }
       - { src: 'default.gdb', dest: 'gdbinit.d/default.gdb' }
-
-  - name: download vimplug
-    get_url:
-      owner: '{{ user }}'
-      url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      dest: '{{ home }}/.vim/autoload/plug.vim'
-
-  - name: download antigen
-    get_url:
-      owner: '{{ user }}'
-      url: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
-      dest: '{{ home }}/.antigen.zsh'
-
-  - name: create .signature files (for mutt)
-    copy:
-      dest: '{{ home }}/.signature'
-      owner: '{{ user }}'
-      content: |
-        Thanks,
-        Marcos

@@ -1,5 +1,6 @@
 setup:
   pkg.installed:
+    - cache_valid_time: 300
     - pkgs:
       - autoconf
       - automake
@@ -7,6 +8,7 @@ setup:
       - bc
       - bcc-tools
       - bison
+      - bridge-utils
       - clang
       - cmake
       - cscope
@@ -59,6 +61,7 @@ setup:
       - lttng-ust-devel
       - make
       - man-pages
+      - Mesa-demo-x
       - meson
       - moreutils
       - mozilla-nss-devel
@@ -105,3 +108,61 @@ setup:
       - powerline-status
       - thefuck
       - virtme
+
+dirs:
+  file.directory:
+    - user: marcos
+    - group: users
+    - mode: 755
+    - makedirs: True
+    - names:
+      - ~marcos/git
+      - ~marcos/.vim/autoload
+      - ~marcos/.config/powerline/themes/tmux
+      - ~marcos/.config/powerline/themes/vim
+
+~marcos/.vim/autoload/plug.vim:
+  file.managed:
+    - source: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    - mode: 755
+    - skip_verify: True
+    - user: marcos
+    - group: users
+
+~marcos/.antigen.zsh:
+  file.managed:
+    - source: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
+    - mode: 755
+    - skip_verify: True
+    - user: marcos
+    - group: users
+
+~marcos/.signature:
+  file.managed:
+    - user: marcos
+    - group: users
+    - mode: 755
+    - contents: |
+      Thanks,
+      Marcos
+
+/tmp/zsh.sh:
+  file.managed:
+    - source: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    - mode: 0555
+    - skip_verify: True
+    - user: marcos
+    - group: users
+  cmd.script:
+    - runas: marcos
+
+config-clone:
+  git.cloned:
+    - name: https://github.com/marcosps/config_files
+    - target: ~marcos/git/config_files
+    - user: marcos
+
+# start and enable libvirtd service
+libvirtd:
+  service.running:
+    - enable: True
