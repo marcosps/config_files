@@ -10,6 +10,7 @@ setup:
       - bison
       - bridge-utils
       - blktrace
+      - blktests
       - clang
       - cmake
       - cscope
