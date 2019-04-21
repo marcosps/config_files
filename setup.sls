@@ -133,6 +133,16 @@ dirs:
     - user: marcos
     - group: users
 
+/tmp/zsh.sh:
+  file.managed:
+    - source: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    - mode: 0555
+    - skip_verify: True
+    - user: marcos
+    - group: users
+  cmd.script:
+    - runas: marcos
+
 ~marcos/.antigen.zsh:
   file.managed:
     - source: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
@@ -149,16 +159,6 @@ dirs:
     - contents: |
       Thanks,
       Marcos
-
-/tmp/zsh.sh:
-  file.managed:
-    - source: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-    - mode: 0555
-    - skip_verify: True
-    - user: marcos
-    - group: users
-  cmd.script:
-    - runas: marcos
 
 config-clone:
   git.cloned:
