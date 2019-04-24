@@ -22,5 +22,5 @@
 
 [includeIf "gitdir:~/git/suse/"]
 	path = ~/.gitconfig.prof
-[includeIf "gitdir:/usr/src/mainline/"]
+[includeIf "gitdir:~/git/linux/"]
 	path = ~/.gitconfig.kernel
