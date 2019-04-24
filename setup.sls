@@ -34,6 +34,7 @@ setup:
       - gcc-c++
       - gdb
       - gperf
+      - guestfs-tools
       - hexchat
       - htop
       - iotop
