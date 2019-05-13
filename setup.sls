@@ -148,6 +148,15 @@ create-links-tmux-{{ file }}:
     - makedirs: True
 {% endfor %}
 
+{% for file, dir in { 'kernel.conf' : '/etc/sysctl.d', 'default.gdb' : '/etc/gdbinit.d' }.items() %}
+copy-{{ file }}:
+  file.copy:
+    - name: {{ dir }}/{{ file }}
+    - source: {{ confighome }}/{{ file }}
+    - mode: 644
+    - makedirs: True
+{% endfor %}
+
 /home/marcos/.vim/autoload/plug.vim:
   file.managed:
     - source: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
