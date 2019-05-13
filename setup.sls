@@ -1,3 +1,7 @@
+{% set my_user = 'marcos' %}
+{% set my_home = '/home/marcos' %}
+{% set confighome = '/home/marcos/git/config_files/configs' %}
+
 setup:
   pkg.installed:
     - cache_valid_time: 300
@@ -126,7 +130,25 @@ dirs:
       - ~marcos/.config/powerline/themes/tmux
       - ~marcos/.config/powerline/themes/vim
 
-~marcos/.vim/autoload/plug.vim:
+{% for file in [ 'gitconfig', 'gitconfig.prof', 'gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc' ] %}
+create-links-{{ file }}:
+  file.symlink:
+    - name: {{ my_home }}/.{{ file }}
+    - target: {{ confighome }}/{{ file }}
+    - user: {{ my_user }}
+    - makedirs: True
+{% endfor %}
+
+{% for file in [ 'vim', 'tmux' ] %}
+create-links-tmux-{{ file }}:
+  file.symlink:
+    - name: {{ my_home }}/.config/powerline/themes/{{ file }}/default.json
+    - target: {{ confighome }}/{{ file }}_default.json
+    - user: {{ my_user }}
+    - makedirs: True
+{% endfor %}
+
+/home/marcos/.vim/autoload/plug.vim:
   file.managed:
     - source: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     - mode: 755
@@ -144,7 +166,7 @@ dirs:
   cmd.script:
     - runas: marcos
 
-~marcos/.antigen.zsh:
+/home/marcos/.antigen.zsh:
   file.managed:
     - source: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
     - mode: 755
@@ -152,19 +174,10 @@ dirs:
     - user: marcos
     - group: users
 
-~marcos/.signature:
-  file.managed:
-    - user: marcos
-    - group: users
-    - mode: 755
-    - contents: |
-      Thanks,
-      Marcos
-
 config-clone:
   git.cloned:
     - name: https://github.com/marcosps/config_files
-    - target: ~marcos/git/config_files
+    - target: /home/marcos/git/config_files
     - user: marcos
 
 # start and enable libvirtd service
