@@ -1,20 +1,26 @@
 #!/bin/bash
 
-raid1() {
-	mdadm --create /dev/md01 --level=1 --raid-devices=2 /dev/loop[12]
-	mkfs.ext4 /dev/md01  >/dev/null
-	mount /dev/md01 /tmp/raid1
-	touch /tmp/raid1/bla
-}
+raid() {
+	LEVEL=$1
+	NDEVS=$2
+	DEVICES=$3
 
-raid10() {
-	mdadm --create /dev/md10 --level=10 --raid-devices=4 /dev/loop[3456]
-	mkfs.ext4 /dev/md10  >/dev/null
-	mount /dev/md10 /tmp/raid10
-	touch /tmp/raid10/bla
-}
+	mkdir /tmp/raid$LEVEL
+	mdadm --quiet --create /dev/md$LEVEL --force --level $LEVEL --metadata=0.90 --raid-devices=$NDEVS $DEVICES 2>/dev/null 1>&2
+	mkfs.ext4 /dev/md$LEVEL  2>/dev/null 1>&2
+	mount /dev/md$LEVEL /tmp/raid$LEVEL
 
-mkdir /tmp/raid{1,10}
+	touch /tmp/raid$LEVEL/bla
+	ls /tmp/raid$LEVEL
+
+	umount /dev/md$LEVEL
+	mdadm --stop /dev/md$LEVEL 2>/dev/null 1>&2
+
+	for dev in "$DEVICES"
+	do
+		wipefs --all $dev 2>/dev/null 1>&2
+	done
+}
 
 # create disks of 50M each
 for i in `seq 6`
@@ -23,7 +29,6 @@ do
 	losetup /dev/loop$i /tmp/disk$i
 done
 
-raid1
-raid10
-
-ls -R /tmp/raid*
+raid 0 2 "$(ls /dev/loop[12])"
+raid 1 2 "$(ls /dev/loop[12])"
+raid 10 4 "$(ls /dev/loop[1234])"
