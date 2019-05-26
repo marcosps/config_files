@@ -22,12 +22,19 @@ raid() {
 	done
 }
 
-# create disks of 50M each
-for i in `seq 6`
-do
-	dd if=/dev/zero of=/tmp/disk$i bs=1024k count=50 2>/dev/null
-	losetup /dev/loop$i /tmp/disk$i
-done
+setup() {
+	# create disks of 50M each
+	for i in `seq 6`
+	do
+		dd if=/dev/zero of=/tmp/disk$i bs=1024k count=50 2>/dev/null
+		losetup /dev/loop$i /tmp/disk$i
+	done
+}
+
+setup
+if [ "$1" == "setup" ]; then
+	exit 0
+fi
 
 raid 0 2 "$(ls /dev/loop[12])"
 raid 1 2 "$(ls /dev/loop[12])"
