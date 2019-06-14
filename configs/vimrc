@@ -60,6 +60,7 @@ set lazyredraw " do not redraw when executing macros
 set ffs=unix,dos,mac " use UNIX standard file type
 set path+=**
 set cursorline
+set cursorcolumn
 set tabstop=8 shiftwidth=8 softtabstop=0
 set noexpandtab
 set hlsearch
