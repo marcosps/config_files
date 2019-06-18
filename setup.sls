@@ -37,6 +37,7 @@ setup:
       - gcc
       - gcc-c++
       - gdb
+      - gparted
       - gperf
       - guestfs-tools
       - hexchat
