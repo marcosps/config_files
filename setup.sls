@@ -176,6 +176,7 @@ copy-{{ file }}:
   cmd.script:
     - runas: marcos
 
+{% if not salt[ 'file.file_exists' ]('/home/marcos/.antigen.zsh') %}
 /home/marcos/.antigen.zsh:
   file.managed:
     - source: https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh
@@ -183,12 +184,15 @@ copy-{{ file }}:
     - skip_verify: True
     - user: marcos
     - group: users
+{% endif %}
 
+{% if not salt[ 'file.directory_exists' ]('/home/marcos/git/config_files') %}
 config-clone:
   git.cloned:
     - name: https://github.com/marcosps/config_files
     - target: /home/marcos/git/config_files
     - user: marcos
+{% endif %}
 
 # start and enable libvirtd service
 libvirtd:
