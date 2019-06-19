@@ -77,6 +77,7 @@ setup:
       - mutt
       - ncurses-devel
       - openldap2-devel
+      - osc
       - pciutils
       - powerline-fonts
       - python2-pip
