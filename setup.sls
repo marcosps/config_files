@@ -76,6 +76,7 @@ setup:
       - mtr
       - mutt
       - ncurses-devel
+      - obs-service-download_url
       - openldap2-devel
       - osc
       - pciutils
