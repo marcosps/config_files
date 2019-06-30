@@ -42,6 +42,7 @@ setup:
       - guestfs-tools
       - hexchat
       - htop
+      - imapfilter
       - iotop
       - jemalloc-devel
       - kernel-source
@@ -77,6 +78,7 @@ setup:
       - mutt
       - ncurses-devel
       - obs-service-download_url
+      - offlineimap
       - openldap2-devel
       - osc
       - pciutils
@@ -133,7 +135,7 @@ dirs:
       - ~marcos/.config/powerline/themes/tmux
       - ~marcos/.config/powerline/themes/vim
 
-{% for file in [ 'gitconfig', 'gitconfig.prof', 'gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc' ] %}
+{% for file in [ 'gitconfig', 'gitconfig.prof', 'gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc', 'offlineimaprc', 'offlineimap.py', 'imapfilter.lua' ] %}
 create-links-{{ file }}:
   file.symlink:
     - name: {{ my_home }}/.{{ file }}

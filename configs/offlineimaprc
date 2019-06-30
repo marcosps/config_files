@@ -1,0 +1,25 @@
+[general]
+accounts = Gmail
+pythonfile = ~/.offlineimap.py
+
+[Account Gmail]
+localrepository = LocalMail
+remoterepository = RemoteMail
+# Run imapfilter before start the sync
+presynchook = imapfilter -c ~/.imapfilter.lua
+
+[Repository LocalMail]
+type = Maildir
+localfolders = ~/.Maildir/gmail
+
+[Repository RemoteMail]
+auth_mechanisms = LOGIN
+folderfilter = lambda folder: re.search('(INBOX.*|Draft)', folder)
+remoteuser = marcos.souza.org@gmail.com
+remotepasseval = get_gpg('~/.Maildir/gmail/.passwords.gpg')
+type = Gmail
+sync_deletes = no
+holdconnectionopen = true
+keepalive = 60
+ssl_version=tls1_2
+sslcacertfile = /etc/ssl/ca-bundle.pem
