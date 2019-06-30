@@ -9,6 +9,9 @@ gmail = IMAP {
 	ssl = 'tsl1'
 }
 
+-- create folder if not exists
+options.create = true
+
 gmail.INBOX:check_status()
 
 -- Move mails from kernel mailing lists to specific directories
@@ -16,10 +19,20 @@ listFolders = {'linux-block',
 		'linux-scsi',
 		'linux-raid',
 		'linux-kernel'
-	}
+}
 for _, folder in ipairs(listFolders) do
 	matches = gmail.INBOX:contain_to(folder .. '@vger.kernel.org')
 	matches:move_messages(gmail['INBOX/' .. folder])
+end
+
+-- promotional emails
+listEmails = {
+	'@e.carrefour.com.br',
+	'@envios.saraiva.com.br'
+}
+for _, email in ipairs(listEmails) do
+	matches = gmail.INBOX:contain_from(email)
+	matches:move_messages(gmail['INBOX/promotions'])
 end
 
 matches = gmail.INBOX:contain_from('*@github.com')
