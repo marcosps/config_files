@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# makes sure that all changes at least compile before commiting
+make -j`nproc` && make -j`nproc` modules
