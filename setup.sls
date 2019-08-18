@@ -141,7 +141,7 @@ dirs:
       - ~marcos/.config/powerline/themes/tmux
       - ~marcos/.config/powerline/themes/vim
 
-{% for file in [ 'gitconfig', 'gitconfig.prof', 'gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc', 'offlineimaprc', 'offlineimap.py', 'imapfilter.lua' ] %}
+{% for file in [ 'gitconfig', 'gitconfig.prof', 'kernel-dev/gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc', 'offlineimaprc', 'offlineimap.py', 'imapfilter.lua' ] %}
 create-links-{{ file }}:
   file.symlink:
     - name: {{ my_home }}/.{{ file }}
@@ -149,6 +149,17 @@ create-links-{{ file }}:
     - user: {{ my_user }}
     - makedirs: True
 {% endfor %}
+
+# install kernel development hooks
+{% if salt['file.directory_exists']('/home/marcos/git/linux') %}
+{% for file in [ 'kernel-dev/pre-commit' ] %}
+kernel-dev-hook-{{ file }}:
+  file.symlink:
+    - name: {{ my_home }}/git/linux/.git/hooks/pre-commit
+    - target: {{ confighome }}/kernel-dev/pre-commit
+    - user: {{ my_user }}
+{% endfor %}
+{% endif %}
 
 {% for file in [ 'vim', 'tmux' ] %}
 create-links-tmux-{{ file }}:
