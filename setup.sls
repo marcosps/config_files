@@ -52,9 +52,11 @@ setup:
       - libaio-devel
       - libblkid-devel
       - libcurl-devel
+      - libebl-devel
       - libelf-devel
       - libexpat-devel
       - liblz4-devel
+      - libnotify-tools
       - liboath-devel
       - libopenssl-devel
       - librados-devel
@@ -65,6 +67,7 @@ setup:
       - libvirt-daemon-qemu
       - libvirt-devel
       - libSDL-devel
+      - libsecret-tools
       - linuxconsoletools
       - ltrace
       - lttng-ust-devel
@@ -109,9 +112,12 @@ setup:
       - vim
       - virt-manager
       - virt-viewer
-      - youtube-dl
       - wdiff
       - wget
+      - wireshark-ui-qt
+      - xen-devel
+      - xz-devel
+      - youtube-dl
       - zsh
 
   pip.installed:
