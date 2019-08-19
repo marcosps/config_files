@@ -24,3 +24,5 @@
 	path = ~/.gitconfig.prof
 [includeIf "gitdir:~/git/linux/"]
 	path = ~/.gitconfig.kernel
+[alias]
+	cs = commit --verbose --signoff
