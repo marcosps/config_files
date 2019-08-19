@@ -141,7 +141,7 @@ dirs:
       - ~marcos/.config/powerline/themes/tmux
       - ~marcos/.config/powerline/themes/vim
 
-{% for file in [ 'gitconfig', 'gitconfig.prof', 'kernel-dev/gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc', 'offlineimaprc', 'offlineimap.py', 'imapfilter.lua' ] %}
+{% for file in [ 'gitconfig', 'gitconfig.prof', 'kernel-dev/gitconfig.kernel', 'muttrc', 'tmux.conf', 'vimrc', 'zshrc', 'offlineimaprc', 'offlineimap.py', 'imapfilter.lua', 'gkgetsecret.py' ] %}
 create-links-{{ file }}:
   file.symlink:
     - name: {{ my_home }}/.{{ file }}
