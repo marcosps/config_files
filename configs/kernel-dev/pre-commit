@@ -1,4 +1,10 @@
 #!/bin/bash
 
+# check for style problems
+exec git diff --cached | scripts/checkpatch.pl --quiet --no-signoff -
+if [ "$?" = "1" ]; then
+	exit 1
+fi
+
 # makes sure that all changes at least compile before commiting
 make -j`nproc` && make -j`nproc` modules
