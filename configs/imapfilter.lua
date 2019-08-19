@@ -1,5 +1,5 @@
 -- Grab passwd from gpged encrypted passwd
-cmd = io.popen("gpg -q -d ~/.Maildir/gmail/.passwords.gpg", "r")
+cmd = io.popen("secret-tool lookup personal yes", "r")
 pass = cmd:read("*a")
 
 gmail = IMAP {
@@ -28,7 +28,18 @@ end
 -- promotional emails
 listEmails = {
 	'@e.carrefour.com.br',
-	'@envios.saraiva.com.br'
+	'@envios.saraiva.com.br',
+	'@emkt.submarino.com.br',
+	'@deals.banggood.com',
+	'@edm.gearbest.com',
+	'@amazon.com.br',
+	'@youtube.com',
+	'@linkedin.com',
+	'@twitter.com',
+	'@spotify.com',
+	'@spotify.com',
+	'@meetup.com',
+	'@duolingo.com'
 }
 for _, email in ipairs(listEmails) do
 	matches = gmail.INBOX:contain_from(email)

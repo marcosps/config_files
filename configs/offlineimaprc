@@ -1,6 +1,6 @@
 [general]
 accounts = Gmail
-pythonfile = ~/.offlineimap.py
+pythonfile = ~/.gkgetsecret.py
 
 [Account Gmail]
 localrepository = LocalMail
@@ -15,8 +15,8 @@ localfolders = ~/.Maildir/gmail
 [Repository RemoteMail]
 auth_mechanisms = LOGIN
 folderfilter = lambda folder: re.search('(INBOX.*|Draft)', folder)
-remoteuser = marcos.souza.org@gmail.com
-remotepasseval = get_gpg('~/.Maildir/gmail/.passwords.gpg')
+remoteusereval = get_val_from_attrs('user', 'personal', 'yes')
+remotepasseval = get_pw_from_attrs('personal', 'yes')
 type = Gmail
 sync_deletes = no
 holdconnectionopen = true
