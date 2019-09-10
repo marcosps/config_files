@@ -79,6 +79,7 @@ setup:
       - mozilla-nss-devel
       - mtr
       - mutt
+      - nbd
       - ncurses-devel
       - obs-service-download_url
       - offlineimap
