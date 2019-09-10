@@ -10,13 +10,14 @@ set smtp_url="smtp://marcos.souza.org@smtp.gmail.com:587/"
 set smtp_pass = `secret-tool lookup personal yes`
 set ssl_force_tls=yes
 
+set auto_tag = yes
 set from="marcos.souza.org@gmail.com"
 set realname="Marcos Paulo de Souza"
 # always put myself in copy
 my_hdr CC: marcos.souza.org@gmail.com
 
 # refresh mailbox each minute
-set timeout = 60
+set timeout = 1
 
 set sort="threads"
 set strict_threads="yes"
