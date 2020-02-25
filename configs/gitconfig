@@ -1,13 +1,14 @@
 [user]
 	name = Marcos Paulo de Souza
-	email = marcos.souza.org@gmail.com
+	email = mpdesouza@suse.com
 
 [sendemail]
-	from = Marcos Paulo de Souza <marcos.souza.org@gmail.com>
-	smtpserver = smtp.gmail.com
-	smtpuser = marcos.souza.org@gmail.com
-	smtpencryption = tls
-	smtpserverport = 587
+	from = Marcos Paulo de Souza <marcos@mpdesouza.com>
+	smtpserver = mail.mpdesouza.com
+	smtpuser = marcos@mpdesouza.com
+	smtpencryption = ssl
+	smtpport = 465
+
 [push]
 	default = simple
 [merge]
