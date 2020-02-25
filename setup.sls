@@ -12,6 +12,7 @@ setup:
       - bc
       - bcc-tools
       - bison
+      - bpftrace
       - bridge-utils
       - blktrace
       - blktests
@@ -86,6 +87,7 @@ setup:
       - openldap2-devel
       - osc
       - pciutils
+      - perf
       - powerline-fonts
       - python2-pip
       - python3-Sphinx
@@ -100,6 +102,7 @@ setup:
       - rdma-core-devel
       - rpm-build
       - rpmdevtools
+      - rpmlint
       - snappy-devel
       - strace
       - sysstat
