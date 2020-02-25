@@ -4,7 +4,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'farmergreg/vim-lastplace'
-Plug 'vim-utils/vim-man'
 Plug 'rykka/riv.vim'
 Plug 'stfl/meson.vim'
 Plug 'lzap/vim-selinux'
@@ -17,6 +16,8 @@ Plug 'krisajenkins/vim-projectlocal'
 Plug 'majutsushi/tagbar'
 Plug 'saltstack/salt-vim'
 Plug 'kaicataldo/material.vim'
+Plug 'ahf/cocci-syntax'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " disable arrow keys
