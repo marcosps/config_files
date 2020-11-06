@@ -14,6 +14,7 @@
 [merge]
 	tool = vimdiff
 	mergestyle = diff3
+	conflictstyle = diff3
 [mergetools]
 	prompt = false
 [diff]
@@ -27,3 +28,4 @@
 	path = ~/.gitconfig.kernel
 [alias]
 	cs = commit --verbose --signoff
+	tc = tag --contains

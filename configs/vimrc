@@ -18,6 +18,7 @@ Plug 'saltstack/salt-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'ahf/cocci-syntax'
 Plug 'plasticboy/vim-markdown'
+Plug 'albertorestifo/github.vim'
 call plug#end()
 
 " disable arrow keys
@@ -74,9 +75,9 @@ set history=500
 set pastetoggle=<f5>
 set autoread " reload file when changed from the outside
 set noshowmode " don't show mode in default statusbar
-"TODO: use vi powerline from powerline when it can show file diffs into
-"statusbar
-"set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
+" set vim to remember the last 20 files, and with a maximum of 1000 lines to
+" yask/handle
+set viminfo='20,\"1000
 
 " set folding options
 set foldmethod=syntax

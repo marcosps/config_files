@@ -24,7 +24,6 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle thefuck
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Syntax highlighting bundle.

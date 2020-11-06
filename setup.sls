@@ -52,6 +52,7 @@ setup:
       - leveldb-devel
       - libaio-devel
       - libblkid-devel
+      - libcap-progs
       - libcurl-devel
       - libebl-devel
       - libelf-devel
@@ -67,6 +68,7 @@ setup:
       - libvirt-daemon
       - libvirt-daemon-qemu
       - libvirt-devel
+      - libvirt-daemon-config-network
       - libSDL-devel
       - libsecret-tools
       - linuxconsoletools
